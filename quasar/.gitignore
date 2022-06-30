@@ -4,6 +4,7 @@ node_modules
 
 # Quasar core related directories
 # .quasar # Commented for Storybook integration
+.quasar/stats-undefined.html
 /dist
 
 # Cordova related directories and files
