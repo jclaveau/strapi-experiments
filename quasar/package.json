@@ -8,6 +8,8 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",
     "test": "echo \"No test specified\" && exit 0",
+    "test:storybook": "test-storybook --browsers firefox",
+    "test:storybook:coverage": "yarn test:storybook --coverage",
     "storybook": "start-storybook -p 6006 --no-open",
     "build-storybook": "build-storybook",
     "build": "quasar build",
@@ -33,6 +35,8 @@
     "@storybook/addon-interactions": "^6.5.9",
     "@storybook/addon-links": "^6.5.9",
     "@storybook/builder-vite": "^0.1.38",
+    "@storybook/jest": "^0.0.10",
+    "@storybook/test-runner": "^0.3.0",
     "@storybook/testing-library": "^0.0.13",
     "@storybook/vue3": "^6.5.9",
     "@vue/devtools": "^6.1.4",
@@ -43,6 +47,7 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-storybook": "^0.5.13",
     "eslint-plugin-vue": "^8.5.0",
+    "jest": "27",
     "vue-loader": "^16.8.3"
   },
   "engines": {

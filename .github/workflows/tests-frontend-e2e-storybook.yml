@@ -1,0 +1,43 @@
+name: Tests Front - e2e - Storybook
+
+on: [push, pull_request]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: ./quasar
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [ 16 ]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    # https://github.com/actions/setup-node#caching-global-packages-data
+    - uses: actions/setup-node@v3
+      with:
+        # https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#multiple-operating-systems-and-architectures
+        node-version: ${{ matrix.node-version }}
+        cache: 'yarn'
+        cache-dependency-path: quasar/yarn.lock
+
+    - name: yarn install
+      run: yarn install --immutable
+
+    - name: Build Storybook
+      run: yarn build-storybook
+
+    # https://storybook.js.org/tutorials/ui-testing-handbook/react/en/automate/
+    - name: Serve Storybook and run tests
+      run: |
+        npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+          "npx http-server storybook-static --port 6006 --silent" \
+          "npx wait-on tcp:6006 && yarn test:storybook:coverage"
+
+
