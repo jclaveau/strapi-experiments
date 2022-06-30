@@ -15,7 +15,7 @@ const path = require('path');
 
 module.exports = configure((/* ctx */) => ({
   eslint: {
-    // fix: true,
+    fix: true,
     // include = [],
     // exclude = [],
     // rawOptions = {},
@@ -60,15 +60,15 @@ module.exports = configure((/* ctx */) => ({
       node: 'node16',
     },
 
-    vueRouterMode: 'hash', // available values: 'hash', 'history'
+    vueRouterMode: 'history', // available values: 'hash', 'history'
     // vueRouterBase,
-    // vueDevtools,
+    // vueDevtools: true,
     // vueOptionsAPI: false,
 
-    // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
+    rebuildCache: !true, // rebuilds Vite/linter/etc cache on startup
 
     // publicPath: '/',
-    // analyze: true,
+    analyze: true,
     // env: {},
     // rawDefine: {}
     // ignorePublicFolder: true,
@@ -93,7 +93,7 @@ module.exports = configure((/* ctx */) => ({
   // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
   devServer: {
     // https: true
-    open: true, // opens browser window automatically
+    open: !true, // opens browser window automatically
   },
 
   // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework

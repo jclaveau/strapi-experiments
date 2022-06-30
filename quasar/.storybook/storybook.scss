@@ -1,0 +1,8 @@
+
+// This makes SB stories still visible in case of js exception
+.sb-wrapper {
+  position: relative !important;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
