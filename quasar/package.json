@@ -17,7 +17,7 @@
     "serve:spa": "yarn serve dist/spa"
   },
   "dependencies": {
-    "@quasar/extras": "1.14.1",
+    "@quasar/extras": "1.14.2",
     "axios": "0.21.4",
     "pinia": "2.0.14",
     "quasar": "2.7.3",
