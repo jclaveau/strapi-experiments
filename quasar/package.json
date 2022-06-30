@@ -20,7 +20,7 @@
     "@quasar/extras": "1.14.2",
     "axios": "0.21.4",
     "pinia": "2.0.14",
-    "quasar": "2.7.3",
+    "quasar": "2.7.4",
     "vue": "3.2.37",
     "vue-i18n": "9.1.10",
     "vue-router": "4.0.16"
