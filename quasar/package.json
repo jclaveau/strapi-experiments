@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "A Quasar Project",
   "productName": "Quasar App",
-  "author": "Jean Claveau <jean.claveau@gmail.com>",
+  "author": {
+    "name": "Jean Claveau",
+    "email": "jean.claveau@gmail.com"
+  },
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",
@@ -14,7 +17,8 @@
     "build-storybook": "build-storybook",
     "build": "quasar build",
     "serve": "quasar serve --history",
-    "serve:spa": "yarn serve dist/spa"
+    "serve:spa": "yarn serve dist/spa",
+    "chromatic": "npx chromatic --project-token=996a9c75eb0a"
   },
   "dependencies": {
     "@quasar/extras": "1.14.2",
@@ -42,6 +46,7 @@
     "@vue/devtools": "6.1.4",
     "autoprefixer": "10.4.7",
     "babel-loader": "8.2.5",
+    "chromatic": "^6.6.4",
     "eslint": "8.18.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-plugin-import": "2.26.0",
@@ -54,5 +59,7 @@
     "node": "^18 || ^16 || ^14.19",
     "npm": ">= 6.13.4",
     "yarn": ">= 1.21.1"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "quasar@0.0.1"
 }
