@@ -1,0 +1,36 @@
+name: Tests Back - Strapi Build
+
+on: [push, pull_request]
+
+jobs:
+  test:
+
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./strapi
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [ 16 ]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    # https://github.com/actions/setup-node#caching-global-packages-data
+    - uses: actions/setup-node@v3
+      with:
+        # https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#multiple-operating-systems-and-architectures
+        node-version: ${{ matrix.node-version }}
+        cache: 'yarn'
+        cache-dependency-path: strapi/yarn.lock
+
+    - name: yarn install
+      run: yarn install --immutable
+
+    - name: strapi build
+      run: yarn strapi build
+
+
