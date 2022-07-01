@@ -43,7 +43,7 @@
     "@storybook/test-runner": "0.3.0",
     "@storybook/testing-library": "0.0.13",
     "@storybook/vue3": "6.5.9",
-    "@vue/devtools": "6.1.4",
+    "@vue/devtools": "6.2.0",
     "autoprefixer": "10.4.7",
     "babel-loader": "8.2.5",
     "chromatic": "6.7.0",
