@@ -1,0 +1,14 @@
+# https://devcenter.heroku.com/articles/build-docker-images-heroku-yml
+# https://blog.dehlin.dev/strapi-v4-with-docker-and-heroku#heading-creating-herokuyml
+
+
+build:
+  docker:
+   web: strapi/Dockerfile.prod
+  config:
+    NODE_ENV: production
+    DATABASE_URL: $DATABASE_URL
+    PORT: $PORT
+
+run:
+  web: yarn start
