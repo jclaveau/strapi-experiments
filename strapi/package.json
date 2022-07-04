@@ -19,6 +19,7 @@
     "better-sqlite3": "7.5.3",
     "pg": "^8.7.3",
     "strapi-plugin-navigation": "^2.1.0",
+    "strapi-plugin-sitemap": "^2.0.8"
   },
   "author": {
     "name": "A Strapi developer"
