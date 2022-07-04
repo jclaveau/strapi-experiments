@@ -5,6 +5,7 @@ node_modules
 # Quasar core related directories
 # .quasar # Commented for Storybook integration
 .quasar/stats-undefined.html
+.quasar/artifacts.json
 /dist
 /coverage
 
