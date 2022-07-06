@@ -1,0 +1,19 @@
+FROM jclaveau/strapi4-quasar2-deps-heroku as build-stage
+ARG NODE_ENV=development
+ENV NODE_ENV=${NODE_ENV}
+ARG STRAPI_WEBSITE_URL
+ENV STRAPI_WEBSITE_URL=${STRAPI_WEBSITE_URL}
+ARG STRAPI_URL_PREFIX
+ENV STRAPI_URL_PREFIX=${STRAPI_URL_PREFIX}
+
+WORKDIR /opt/strapi
+COPY ./strapi/ .
+ENV PATH /opt/strapi/node_modules/.bin:$PATH
+RUN --mount=type=cache,target=/root/.yarn YARN_CACHE_FOLDER=/root/.yarn yarn install
+RUN yarn && yarn build
+
+# https://medium.com/@jwdobken/develop-quasar-applications-with-docker-a19c38d4a6ac
+WORKDIR /opt/quasar
+COPY ./quasar/ .
+RUN --mount=type=cache,target=/root/.yarn YARN_CACHE_FOLDER=/root/.yarn yarn install --production=false
+RUN yarn build

@@ -1,0 +1,75 @@
+# https://blog.dehlin.dev/docker-with-strapi-v4
+version: "3"
+services:
+  app:
+    container_name: app
+    build:
+      context: ..
+      dockerfile: heroku/Dockerfile.monocontainer.dev
+      args:
+        NODE_ENV: ${NODE_ENV}
+        STRAPI_WEBSITE_URL: ${STRAPI_WEBSITE_URL}
+        STRAPI_URL_PREFIX: ${STRAPI_URL_PREFIX}
+    image: strapi-experiments-monocontainer:latest
+    restart: unless-stopped
+    tty: true
+    env_file: .env
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      STRAPI_WEBSITE_URL: ${STRAPI_WEBSITE_URL}
+      STRAPI_URL_PREFIX: ${STRAPI_URL_PREFIX}
+
+      DATABASE_CLIENT: ${STRAPI_DATABASE_CLIENT}
+      DATABASE_PORT: ${STRAPI_DATABASE_PORT}
+      DATABASE_HOST: strapiDB
+      DATABASE_NAME: ${STRAPI_DATABASE_NAME}
+      DATABASE_USERNAME: ${STRAPI_DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${STRAPI_DATABASE_PASSWORD}
+
+      APP_KEYS: ${STRAPI_APP_KEYS}
+      API_TOKEN_SALT: ${STRAPI_API_TOKEN_SALT}
+      JWT_SECRET: ${STRAPI_JWT_SECRET}
+      ADMIN_JWT_SECRET: ${STRAPI_ADMIN_JWT_SECRET}
+    volumes:
+      - ../strapi/config:/opt/config
+      - ../strapi/src:/opt/src
+      - ../strapi/package.json:/opt/package.json
+      - ../strapi/yarn.lock:/opt/yarn.lock # Replace with package-lock.json if using npm
+      - ../strapi/.env:/opt/app/.env
+    ports:
+      - "${QUASAR_PORT}:${QUASAR_PORT}"
+    networks:
+      - strapi
+    depends_on:
+      - strapiDB
+    command: |
+      npx concurrently -n "Quasar,Strapi" -c "magenta,blue"
+        "yarn --cwd /opt/quasar serve:spa -p ${QUASAR_PORT}"
+        "yarn --cwd /opt/strapi start"
+
+  strapiDB:
+    image: postgres:12.0-alpine
+    container_name: strapiDB
+    platform: linux/amd64 #for platform error on Apple M1 chips
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      POSTGRES_USER: ${STRAPI_DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${STRAPI_DATABASE_PASSWORD}
+      POSTGRES_DB: ${STRAPI_DATABASE_NAME}
+    volumes:
+      - strapi-data:/var/lib/postgresql/data/ #using a volume
+      # - ./docker/db:/var/lib/postgresql/data/ # if you want to use a bind folder
+    ports:
+      - "5432:5432"
+    networks:
+      - strapi
+
+volumes:
+    strapi-data:
+
+networks:
+  strapi:
+    name: Strapi
+    driver: bridge
+

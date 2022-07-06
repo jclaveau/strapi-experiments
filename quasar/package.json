@@ -15,9 +15,10 @@
     "test:storybook:coverage": "yarn test:storybook --coverage",
     "storybook": "start-storybook -p 6006 --no-open",
     "build-storybook": "build-storybook",
+    "dev": "quasar dev",
     "build": "quasar build",
-    "serve": "quasar serve --history",
-    "serve:spa": "yarn serve dist/spa",
+    "serve": "yarn serve:spa",
+    "serve:spa": "quasar serve --history --proxy http-proxy.js dist/spa",
     "chromatic": "npx chromatic --project-token=996a9c75eb0a"
   },
   "dependencies": {
