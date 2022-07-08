@@ -1,1 +1,9 @@
 // app global css in SCSS form
+body {
+  background-image: url('/background-squares.svg');
+  background-repeat: no-repeat;
+  // background-size: cover;
+  background-position: 50% 10vh;
+  background-size: 80% 80vh;
+  background-attachment: fixed;
+}
