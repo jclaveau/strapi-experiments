@@ -5,15 +5,23 @@ export default {
   component: App,
   argTypes: {
   },
+  parameters: {
+  },
 };
 
-const Template = (args) => ({
-  components: { App },
-  setup() {
-    return { args };
-  },
-  template: '<App v-bind="args" />',
-});
+const Template = (args) => {
+  return {
+    components: { App },
+    setup() {
+      return { args };
+    },
+    template: `
+      <div class="storybook-anti-oversize-wrapper" style="">
+        <App v-bind="args" />
+      </div>
+    `,
+  }
+};
 
 export const Primary = Template.bind({});
 Primary.args = {

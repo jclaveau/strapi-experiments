@@ -2,7 +2,6 @@
 const { mergeConfig } = require('vite');
 const currentQuasarConfig = require('./quasar-config-result');
 
-
 module.exports = {
   "stories": [
     "../src/**/*.stories.mdx",
