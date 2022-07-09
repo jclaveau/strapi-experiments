@@ -3,6 +3,7 @@ import {
   createRouter, createMemoryHistory, createWebHistory, createWebHashHistory,
 } from 'vue-router';
 import routes from './routes';
+import axios from 'axios';
 
 /*
  * If not building with SSR mode, you can
@@ -27,6 +28,22 @@ export default route((/* { store, ssrContext } */) => {
     // quasar.conf.js -> build -> publicPath
     history: createHistory(process.env.VUE_ROUTER_BASE),
   });
+
+  axios.get('/bo/api/pages')
+    .then(function(response) {
+      // TODO retry https://stackoverflow.com/a/38225011/2714285
+
+      for (let i=0; i<response.data.data.length; i+=1) {
+        const page = response.data.data[i]
+        // https://router.vuejs.org/guide/advanced/dynamic-routing.html#adding-nested-routes
+        Router.addRoute('root', {
+          path: `/${page.attributes.slug}`,
+          component: () => import('pages/NotImplemented.vue')
+        })
+      }
+
+      // console.log('routes', Router.getRoutes())
+    })
 
   return Router;
 });
