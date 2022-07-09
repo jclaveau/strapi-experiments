@@ -1,0 +1,65 @@
+name: Strapi - Playwright Tests
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./strapi
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [ 16 ]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    # https://github.com/actions/setup-node#caching-global-packages-data
+    - uses: actions/setup-node@v3
+      with:
+        # https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#multiple-operating-systems-and-architectures
+        node-version: ${{ matrix.node-version }}
+        cache: 'yarn'
+        cache-dependency-path: strapi/yarn.lock
+
+    - name: Install dependencies
+      run: yarn install --immutable
+
+    # - name: Install Playwright Browsers
+    #   run: npx playwright install --with-deps
+
+    - name: Set the fake .env file
+      run: mv .env.test .env
+
+    - name: build Strapi
+      run: yarn build
+
+    - name: start Strapi
+      run: yarn develop &
+
+    - uses: Unsupervisedcom/action-wait-for-ports@v1
+      with:
+        # Comma separated list of ports to wait for
+        ports: "1337"
+        # Max time in milliseconds to wait
+        # Default: 30000
+        max-wait: "60000"
+        # How frequently to check ports, in milliseconds
+        # Default: 5000
+        check-interval: "3"
+
+    - name: Run Playwright tests
+      run: yarn playwright test
+
+    - uses: actions/upload-artifact@v2
+      if: always()
+      with:
+        name: playwright-report
+        path: ./strapi/playwright-report/
+        retention-days: 30

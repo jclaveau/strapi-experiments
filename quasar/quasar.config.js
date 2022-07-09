@@ -94,6 +94,15 @@ module.exports = configure((/* ctx */) => ({
   devServer: {
     // https: true
     open: !true, // opens browser window automatically
+    proxy: {
+      '/bo': {
+        target: 'http://localhost:1337',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/bo/, ''),
+        secure: false,
+        ws: true,
+      },
+    }
   },
 
   // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
@@ -116,7 +125,11 @@ module.exports = configure((/* ctx */) => ({
 
   // animations: 'all', // --- includes all animations
   // https://v2.quasar.dev/options/animations
-  animations: [],
+  animations: [
+    // 'slideInRight', 'slideOutRight',
+    // 'fadeIn', 'fadeOut'
+  ],
+
 
   // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#property-sourcefiles
   // sourceFiles: {

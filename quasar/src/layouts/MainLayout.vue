@@ -20,10 +20,23 @@
           </q-toolbar-title>
 
 
-          <q-route-tab to="/" label="Home" />
-          <q-route-tab to="/solutions" label="Solutions" />
+          <p v-if="mainNavLoading">
+            loading...
+          </p>
+          <template v-else v-for="navEntry, index of mainNavData" :key="index">
+
+            <q-route-tab
+              :to="navEntry.path"
+              :label="navEntry.title"
+            >
+              <q-tooltip :delay="1000">
+                <pre >{{ navEntry }}</pre>
+              </q-tooltip>
+            </q-route-tab>
+          </template>
+          <!-- <q-route-tab to="/solutions" label="Solutions" />
           <q-route-tab to="/news" label="News" />
-          <q-route-tab to="/contact" label="Contact Us" />
+          <q-route-tab to="/contact" label="Contact Us" /> -->
 
           <q-space/>
           <q-btn
@@ -70,11 +83,27 @@
           &copy; {{ new Date().getFullYear() }} Your Promising Company
         </span>
         <q-space></q-space>
-        <q-btn flat color="grey-2" size="sm" label="Questions" />
-        <q-btn flat color="grey-2" size="sm" label="Terms of use" />
-        <q-btn flat color="grey-2" size="sm" label="Careers" />
+
+          <p v-if="footerNavLoading">
+            loading...
+          </p>
+          <template v-else v-for="navEntry, index of footerNavData" :key="index">
+
+            <q-btn
+              flat
+              color="grey-2"
+              size="sm"
+              :label="navEntry.title"
+            >
+              <q-tooltip :delay="1000">
+                <pre >{{ navEntry }}</pre>
+              </q-tooltip>
+            </q-btn>
+          </template>
+
+        <!-- <q-btn flat color="grey-2" size="sm" label="Questions" />
         <q-btn flat color="grey-2" size="sm" label="Cookie Settings" />
-        <q-btn flat color="grey-2" size="sm" label="About" />
+        <q-btn flat color="grey-2" size="sm" label="About" /> -->
       </q-toolbar>
     </q-footer>
 
@@ -88,12 +117,41 @@
 </style>
 
 <script>
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
+import { useAxios } from '@vue-composable/axios'
 
 export default {
   setup () {
     const leftDrawerOpen = ref(false)
     const rightDrawerOpen = ref(false)
+
+    const {
+      data:mainNavData,
+      loading:mainNavLoading,
+      exec: mainNavExec,
+      status:mainNavStatus
+    } = useAxios()
+
+    watchEffect( () => {
+      mainNavExec({
+        method: 'GET',
+        url: '/bo/api/navigation/render/main-navigation',
+      })
+    })
+
+    const {
+      data:    footerNavData,
+      loading: footerNavLoading,
+      exec:    footerNavExec,
+      status:  footerNavStatus
+    } = useAxios()
+
+    watchEffect( () => {
+      footerNavExec({
+        method: 'GET',
+        url: '/bo/api/navigation/render/footer',
+      })
+    })
 
     return {
       leftDrawerOpen,
@@ -104,7 +162,15 @@ export default {
       rightDrawerOpen,
       toggleRightDrawer () {
         // rightDrawerOpen.value = !rightDrawerOpen.value
-      }
+      },
+
+      mainNavData,
+      mainNavLoading,
+      mainNavStatus,
+
+      footerNavData,
+      footerNavLoading,
+      footerNavStatus,
     }
   }
 }

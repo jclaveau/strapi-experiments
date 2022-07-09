@@ -112,4 +112,7 @@ exports
 *.cache
 build
 .strapi-updater.json
+/test-results/
+/playwright-report/
+/playwright/.cache/
 /docker/db

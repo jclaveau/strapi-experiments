@@ -3373,6 +3373,13 @@
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-2.3.3.tgz#fbf80cc039b82ac21a1acb0f0478de8f61fbf600"
   integrity sha512-SmQLDyhz+6lGJhPELsBdzXGc+AcaT8stgkbiTFGpXPe8Tl1tJaBw1A6pxDqDuRsVkD8uscrkx3hA7QDOoKYtyw==
 
+"@vue-composable/axios@^1.0.0-beta.24":
+  version "1.0.0-beta.24"
+  resolved "https://registry.yarnpkg.com/@vue-composable/axios/-/axios-1.0.0-beta.24.tgz#2f10fbf07d4559cace1fde72be638debfbbc160b"
+  integrity sha512-bmhjFI/3BaI8bUyudKZHuFmHo4snow2C4oiSurjIxBk5Lg2Pp8lIWw0hBZuHzIP/apRMU7FKHnv3JGFaSJwmng==
+  dependencies:
+    vue-composable "^1.0.0-beta.24"
+
 "@vue/compiler-core@3.2.37":
   version "3.2.37"
   resolved "https://registry.yarnpkg.com/@vue/compiler-core/-/compiler-core-3.2.37.tgz#b3c42e04c0e0f2c496ff1784e543fbefe91e215a"
@@ -3414,6 +3421,11 @@
   dependencies:
     "@vue/compiler-dom" "3.2.37"
     "@vue/shared" "3.2.37"
+
+"@vue/devtools-api@^6.0.0-beta.19":
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.2.0.tgz#e3dc98a0cce8e87292745e2d24c9ee8c274a023b"
+  integrity sha512-pF1G4wky+hkifDiZSWn8xfuLOJI1ZXtuambpBEYaf7Xaf6zC/pM29rvAGpd3qaGXnr4BAXU1Pxz/VfvBGwexGA==
 
 "@vue/devtools-api@^6.0.0-beta.7", "@vue/devtools-api@^6.1.4":
   version "6.1.4"
@@ -14555,6 +14567,13 @@ void-elements@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-3.1.0.tgz#614f7fbf8d801f0bb5f0661f5b2f5785750e4f09"
   integrity sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==
+
+vue-composable@^1.0.0-beta.24:
+  version "1.0.0-beta.24"
+  resolved "https://registry.yarnpkg.com/vue-composable/-/vue-composable-1.0.0-beta.24.tgz#04032163fb90adfb4c1f0f5d962f9bca00398341"
+  integrity sha512-rVxqIk+CCBDNlu7MK59FB6hIHbjpaNszSZ3o1fReXiDKpdw2AAnSWx5vqUpJgC4yGlUzBMJ2eUQIjij5/wr8Kg==
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.19"
 
 vue-demi@*:
   version "0.13.1"
