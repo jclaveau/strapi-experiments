@@ -14,7 +14,7 @@ import axios from 'axios';
  * with the Router instance.
  */
 
-export default route((/* { store, ssrContext } */) => {
+export default route( async (/* { store, ssrContext } */) => {
   const createHistory = process.env.SERVER
     ? createMemoryHistory
     : (process.env.VUE_ROUTER_MODE === 'history' ? createWebHistory : createWebHashHistory);
@@ -29,7 +29,7 @@ export default route((/* { store, ssrContext } */) => {
     history: createHistory(process.env.VUE_ROUTER_BASE),
   });
 
-  axios.get('/bo/api/pages')
+  await axios.get('/bo/api/pages')
     .then(function(response) {
       // TODO retry https://stackoverflow.com/a/38225011/2714285
 
