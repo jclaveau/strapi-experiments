@@ -1,9 +1,5 @@
 name: Strapi - Playwright Tests
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push, pull_request]
 jobs:
   test:
     timeout-minutes: 60
@@ -36,6 +32,9 @@ jobs:
 
     - name: Set the fake .env file
       run: mv .env.test .env
+
+    - name: Populate sqlite db with fixtures
+      run: ./tests/import_sqlite_fixtures.sh
 
     - name: build Strapi
       run: yarn build

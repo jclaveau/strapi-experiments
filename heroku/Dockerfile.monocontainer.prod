@@ -6,8 +6,6 @@ ENV STRAPI_WEBSITE_URL=${STRAPI_WEBSITE_URL}
 ARG STRAPI_URL_PREFIX
 ENV STRAPI_URL_PREFIX=${STRAPI_URL_PREFIX}
 
-RUN apk add git
-
 # TODO move strapi to app subfolder
 WORKDIR /opt/strapi
 COPY ./strapi/ .
