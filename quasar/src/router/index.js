@@ -44,6 +44,9 @@ export default route( async (/* { store, ssrContext } */) => {
 
       // console.log('routes', Router.getRoutes())
     })
+    .catch(function (error) {
+      console.error('Loading dynamic routes failed', error);
+    })
 
   return Router;
 });

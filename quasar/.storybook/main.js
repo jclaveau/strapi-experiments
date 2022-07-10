@@ -24,10 +24,12 @@ module.exports = {
   async viteFinal(config, { configType }) {
     // https://github.com/storybookjs/builder-vite#migration-from-webpack--cra
     const quasarConfig = await currentQuasarConfig()
-
+    const quasarViteConfig = quasarConfig[0].object
+    // console.log('quasarConfig', quasarViteConfig.server)
+    // console.log('config', config.server)
 
     // Plugins
-    const quasarVitePluginNames = quasarConfig[0].object.plugins.map(plugin => {
+    const quasarVitePluginNames = quasarViteConfig.plugins.map(plugin => {
       if (Array.isArray(plugin)) {
         // Nothing to do here for now
       }
@@ -40,13 +42,16 @@ module.exports = {
     config.plugins = config.plugins.filter(pluginConfig => {
       return pluginConfig.name == null || ! quasarVitePluginNames.includes(pluginConfig.name)
     })
-    config.plugins = [...config.plugins, ...quasarConfig[0].object.plugins]
+    config.plugins = [...config.plugins, ...quasarViteConfig.plugins]
 
     const updatedConfig =  mergeConfig(config, {
       resolve: {
         alias: {
-          ...quasarConfig[0].object.resolve.alias
+          ...quasarViteConfig.resolve.alias
         },
+      },
+      server: {
+        ...quasarViteConfig.server
       },
     });
 
