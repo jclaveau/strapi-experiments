@@ -1,7 +1,7 @@
 <template>
   <!-- <q-page class="flex flex-center"> -->
   <q-page
-    class="flex flex-center q-mx-xl"
+    class="flex flex-center with-doc-margins"
     :style="{
       // border: '1px solid #000',
     }"
@@ -9,7 +9,7 @@
 
     <div
       :class="[
-        'q-gutter-lg',
+        // 'q-gutter-lg',
         'full-width',
         'q-py-lg',
       ]"
@@ -24,11 +24,12 @@
           'flex',
           'items-center',
           'justify-center',
+          'doc-section',
         ]"
         :style="{
           // border: '1px solid #000',
-          height: 'calc(100vh - 140px)',
-          padding: '15vh 0 20vh 0',
+          // minHeight: 'calc(100vh - 140px)',
+          // padding: '15vh 0 20vh 0',
         }"
         >
 
@@ -42,24 +43,23 @@
           'flex',
           'items-center',
           'justify-center',
+          'doc-section',
         ]"
         :style="{
           // border: '1px solid #000',
-          height: 'calc(100vh - 140px)',
-          padding: '15vh 0 20vh 0',
+          // minHeight: 'calc(100vh - 140px)',
+          // padding: '15vh 0 20vh 0',
         }"
         >
 
         <h2>You may be interested by those awesome solutions to all your needs</h2>
 
-        <div class="row q-gutter-md full-width">
-          <div
-            class="col"
-            >
+        <div class="row full-width">
+
+          <div class="col-12 col-sm-4">
             <q-card
-              class="my-card text-white bg-cyan-3"
+              class="solution-card text-white bg-cyan-3"
               :style="{
-                height: '30vh',
               }"
               >
               <q-card-section>
@@ -72,11 +72,11 @@
               </q-card-section>
             </q-card>
           </div>
-          <div class="col">
+
+          <div class="col-12 col-sm-4">
             <q-card
-              class="my-card text-white bg-red-4"
+              class="solution-card text-white bg-red-4"
               :style="{
-                height: '30vh',
               }"
             >
               <q-card-section>
@@ -89,11 +89,11 @@
               </q-card-section>
             </q-card>
           </div>
-          <div class="col">
+
+          <div class="col-12 col-sm-4">
             <q-card
-              class="my-card text-white bg-indigo-4"
+              class="solution-card text-white bg-indigo-4"
               :style="{
-                height: '30vh',
               }"
             >
               <q-card-section>
@@ -107,8 +107,9 @@
             </q-card>
           </div>
         </div>
-
       </section>
+
+
 
       <section
         :class="[
@@ -116,10 +117,11 @@
           'flex',
           'items-center',
           // 'justify-center',
+          'doc-section',
         ]"
         :style="{
           // border: '1px solid #000',
-          height: 'calc(100vh - 140px)',
+          // minHeight: 'calc(100vh - 140px)',
           // minHeight: 'inherit',
         }"
         >
@@ -147,12 +149,89 @@
               'bg-grey-1',
               'rounded-borders',
               // 'full-height',
+              'gt-xs',
             ]"
+            :style="{
+              margin: '10px',
+            }"
+
           >
             <q-carousel-slide :name="1" class="column no-wrap">
-              <div class="row fit justify-start items-center q-gutter-xs q-col-gutter no-wrap">
+              <div class="row fit justify-start items-center">
+              <!-- <div class="row fit justify-start items-center
+              q-gutter-xs q-col-gutter no-wrap"> -->
 
-                <q-card class="my-card col-3 full-height" flat bordered>
+                <div class="my-card col-4 full-height">
+                  <q-card class="full-height" flat bordered>
+                    <q-card-section horizontal class="full-height">
+                      <q-card-section class="q-pt-xs text-left">
+                        <div class="text-overline">2022-05-03</div>
+                        <div class="text-h5 q-mt-sm q-mb-xs">Good News!</div>
+                        <div class="text-caption text-grey">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </div>
+                      </q-card-section>
+
+                      <q-img
+                        class="rounded-borders"
+                        src="https://cdn.quasar.dev/img/parallax2.jpg"
+                      />
+                    </q-card-section>
+                  </q-card>
+                </div>
+
+                <div class="my-card col-4 full-height">
+                  <q-img class="rounded-borders full-height" src="https://cdn.quasar.dev/img/parallax1.jpg" />
+                </div>
+                <div class="my-card col-4 full-height">
+                  <q-img class="rounded-borders full-height" src="https://cdn.quasar.dev/img/mountains.jpg" />
+                </div>
+              </div>
+            </q-carousel-slide>
+            <q-carousel-slide :name="2" class="column no-wrap">
+              <div class="row fit justify-start items-center q-gutter-xs q-col-gutter no-wrap">
+                <q-img class="rounded-borders col-6 full-height" src="https://cdn.quasar.dev/img/parallax2.jpg" />
+                <q-img class="rounded-borders col-6 full-height" src="https://cdn.quasar.dev/img/quasar.jpg" />
+              </div>
+            </q-carousel-slide>
+          </q-carousel>
+
+
+          <q-carousel
+            v-model="slide"
+            transition-prev="slide-right"
+            transition-next="slide-left"
+            swipeable
+            animated
+
+            infinite
+            :autoplay="carouselAutoplay"
+            @mouseenter="carouselAutoplay = false"
+            @mouseleave="carouselAutoplay = true"
+
+            control-color="primary"
+            navigation
+            padding
+            arrows
+            c-height="300px"
+            :class="[
+              'bg-grey-1',
+              'rounded-borders',
+              // 'full-height',
+              'xs',
+            ]"
+            :style="{
+              margin: '10px',
+            }"
+
+          >
+            <q-carousel-slide :name="1" class="column no-wrap">
+              <div class="row fit justify-start items-center q-gutter-xs q-col-gutter">
+              <!-- <div class="row fit justify-start items-center
+              q-gutter-xs q-col-gutter no-wrap"> -->
+
+                <q-card class="my-card col-12 col-md-3 full-height" flat bordered>
                   <q-card-section horizontal class="full-height">
                     <q-card-section class="q-pt-xs text-left">
                       <div class="text-overline">2022-05-03</div>
@@ -169,20 +248,25 @@
                     />
                   </q-card-section>
                 </q-card>
-
-
-
-                <q-img class="rounded-borders col-3 full-height" src="https://cdn.quasar.dev/img/parallax1.jpg" />
-                <q-img class="rounded-borders col-3 full-height" src="https://cdn.quasar.dev/img/mountains.jpg" />
-                <q-img class="rounded-borders col-3 full-height" src="https://cdn.quasar.dev/img/parallax1.jpg" />
               </div>
             </q-carousel-slide>
+
             <q-carousel-slide :name="2" class="column no-wrap">
-              <div class="row fit justify-start items-center q-gutter-xs q-col-gutter no-wrap">
-                <q-img class="rounded-borders col-6 full-height" src="https://cdn.quasar.dev/img/parallax2.jpg" />
-                <q-img class="rounded-borders col-6 full-height" src="https://cdn.quasar.dev/img/quasar.jpg" />
-              </div>
+              <q-img class="rounded-borders col-12 col-md-3 full-height" src="https://cdn.quasar.dev/img/parallax1.jpg" />
             </q-carousel-slide>
+            <q-carousel-slide :name="3" class="column no-wrap">
+              <q-img class="rounded-borders col-12 col-md-3 full-height" src="https://cdn.quasar.dev/img/mountains.jpg" />
+            </q-carousel-slide>
+
+            <q-carousel-slide :name="4" class="column no-wrap">
+              <q-img class="rounded-borders col-6 full-height" src="https://cdn.quasar.dev/img/parallax2.jpg" />
+            </q-carousel-slide>
+
+            <q-carousel-slide :name="5" class="column no-wrap">
+              <q-img class="rounded-borders col-6 full-height" src="https://cdn.quasar.dev/img/quasar.jpg" />
+            </q-carousel-slide>
+
+
           </q-carousel>
 
 
@@ -192,11 +276,19 @@
 
     </div>
 
-
-
-
   </q-page>
 </template>
+
+<style lang="scss">
+.solution-card {
+  min-height: 30vh;
+  margin: 10px;
+}
+
+.q-carousel__slide > .row > * {
+  margin: 5px;
+}
+</style>
 
 <script>
 import { defineComponent, ref } from 'vue';

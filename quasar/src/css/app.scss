@@ -6,3 +6,22 @@
   background-size: 80% 80vh;
   background-attachment: fixed;
 }
+
+@media (min-width: $breakpoint-sm-min) {
+  .q-page.with-doc-margins {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  section.doc-section {
+    min-height: calc(100vh - 140px);
+  }
+}
+
+@media (min-width: $breakpoint-lg-min) {
+  .q-page.with-doc-margins {
+    margin-left: 17%;
+    margin-right: 17%;
+  }
+}
+

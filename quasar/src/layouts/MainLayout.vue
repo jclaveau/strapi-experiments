@@ -2,57 +2,78 @@
   <q-layout view="hHh lpR fFf">
 
     <q-header elevated
-      class="bg-primary text-white q-px-md"
+      class="bg-primary text-white q-px-md no-wrap"
       height-hint="98"
       >
-      <!-- <q-toolbar>
-      </q-toolbar> -->
 
-      <nav>
-        <q-tabs align="left">
-          <!-- <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" /> -->
+      <q-toolbar>
+        <!-- <q-btn flat round dense icon="menu" />
+        <q-btn flat round dense icon="search" /> -->
 
-          <q-toolbar-title>
-            <q-avatar>
-              <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-            </q-avatar>
-            Best Project Ever
-          </q-toolbar-title>
+        <q-toolbar-title>
+          <q-avatar>
+            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+          </q-avatar>
+          Best Project Ever
+        </q-toolbar-title>
 
+        <nav class="no-wrap">
 
           <p v-if="mainNavLoading">
             loading...
           </p>
-          <template v-else v-for="navEntry, index of mainNavData" :key="index">
+          <template v-else>
 
-            <q-route-tab
-              :to="navEntry.path"
-              :label="navEntry.title"
+            <q-btn-dropdown
+              auto-close
+              color="primary"
+              icon="menu"
+              c-split
+              class="xs"
+              unelevated
             >
-              <q-tooltip :delay="1000">
-                <pre >{{ navEntry }}</pre>
-              </q-tooltip>
-            </q-route-tab>
+              <template v-for="navEntry, index of mainNavData" :key="index">
+                <q-list>
+                  <q-item clickable v-ripple :to="navEntry.path" exact>
+                    <q-item-section>{{ navEntry.title }}</q-item-section>
+                  </q-item>
+                </q-list>
+              </template>
+            </q-btn-dropdown>
+
+            <q-tabs align="left">
+              <!-- <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" /> -->
+                <template v-for="navEntry, index of mainNavData" :key="index">
+                  <q-route-tab
+                    :to="navEntry.path"
+                    :label="navEntry.title"
+                    class="gt-xs"
+                  >
+                    <q-tooltip :delay="1000">
+                      <pre >{{ navEntry }}</pre>
+                    </q-tooltip>
+                  </q-route-tab>
+              </template>
+            </q-tabs>
           </template>
-          <!-- <q-route-tab to="/solutions" label="Solutions" />
-          <q-route-tab to="/news" label="News" />
-          <q-route-tab to="/contact" label="Contact Us" /> -->
 
-          <q-space/>
-          <q-btn
-            dense
-            flat
-            round
-            @click="$q.dark.toggle()"
-            :icon="
-              $q.dark.isActive ? 'light_mode' : 'dark_mode'
-            "
-          >
-          </q-btn>
+        </nav>
 
-          <!-- <q-btn dense flat round icon="menu" @click="toggleRightDrawer" /> -->
-        </q-tabs>
-      </nav>
+
+        <q-btn
+          dense
+          flat
+          round
+          @click="$q.dark.toggle()"
+          :icon="
+            $q.dark.isActive ? 'light_mode' : 'dark_mode'
+          "
+          c-class="gt-xs"
+        >
+        </q-btn>
+        <!-- <q-btn dense flat round icon="menu" @click="toggleRightDrawer" /> -->
+
+      </q-toolbar>
 
     </q-header>
 
