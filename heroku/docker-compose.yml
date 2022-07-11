@@ -48,7 +48,7 @@ services:
         "yarn --cwd /opt/strapi start"
 
   strapiDB:
-    image: postgres:12.11-alpine
+    image: postgres:14.4-alpine
     container_name: strapiDB
     platform: linux/amd64 #for platform error on Apple M1 chips
     restart: unless-stopped
