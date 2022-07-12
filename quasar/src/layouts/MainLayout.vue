@@ -35,7 +35,11 @@
             >
               <template v-for="navEntry, index of mainNavData" :key="index">
                 <q-list>
-                  <q-item clickable v-ripple :to="navEntry.path" exact>
+                  <q-item
+                    clickable
+                    v-ripple
+                    :to="navEntry.path" exact
+                  >
                     <q-item-section>{{ navEntry.title }}</q-item-section>
                   </q-item>
                 </q-list>
@@ -46,6 +50,7 @@
               <!-- <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" /> -->
                 <template v-for="navEntry, index of mainNavData" :key="index">
                   <q-route-tab
+                    v-if="navEntry.items.length == 0"
                     :to="navEntry.path"
                     :label="navEntry.title"
                     class="gt-xs"
@@ -55,6 +60,28 @@
                       <pre >{{ navEntry }}</pre>
                     </q-tooltip>
                   </q-route-tab>
+
+                  <q-btn-dropdown
+                    v-else
+                    auto-close
+                    split
+                    stretch
+                    flat
+                    :label="navEntry.title"
+                    :to="navEntry.path"
+                  >
+                    <q-list>
+                      <q-item
+                         v-for="subNavEntry, subIndex of navEntry.items" :key="subIndex"
+                        clickable
+                        v-ripple
+                        :to="subNavEntry.path" exact
+                      >
+                        <q-item-section>{{ subNavEntry.title }}</q-item-section>
+                      </q-item>
+                    </q-list>
+                  </q-btn-dropdown>
+
               </template>
             </q-tabs>
           </template>
@@ -159,7 +186,7 @@ export default {
     watchEffect( () => {
       mainNavExec({
         method: 'GET',
-        url: '/bo/api/navigation/render/main-navigation',
+        url: '/bo/api/navigation/render/main-navigation?type=TREE',
       })
     })
 
@@ -173,7 +200,7 @@ export default {
     watchEffect( () => {
       footerNavExec({
         method: 'GET',
-        url: '/bo/api/navigation/render/footer',
+        url: '/bo/api/navigation/render/footer?type=TREE',
       })
     })
 

@@ -29,15 +29,19 @@ export default route( async (/* { store, ssrContext } */) => {
     history: createHistory(process.env.VUE_ROUTER_BASE),
   });
 
-  await axios.get('/bo/api/pages')
+  await axios.get('/bo/api/navigation/render/main-navigation?type=RFR')
     .then(function(response) {
       // TODO retry https://stackoverflow.com/a/38225011/2714285
 
-      for (let i=0; i<response.data.data.length; i+=1) {
-        const page = response.data.data[i]
+      console.log('response', response.data)
+
+      const pages = Object.values(response.data.pages)
+      for (let i=0; i < pages.length; i+=1) {
+        const page = pages[i]
+        // console.log('page', page)
         // https://router.vuejs.org/guide/advanced/dynamic-routing.html#adding-nested-routes
         Router.addRoute('root', {
-          path: `/${page.attributes.slug}`,
+          path: page.path,
           component: () => import('pages/NotImplemented.vue')
         })
       }
@@ -47,6 +51,25 @@ export default route( async (/* { store, ssrContext } */) => {
     .catch(function (error) {
       console.error('Loading dynamic routes failed', error);
     })
+
+  // await axios.get('/bo/api/pages')
+  //   .then(function(response) {
+  //     // TODO retry https://stackoverflow.com/a/38225011/2714285
+
+  //     for (let i=0; i<response.data.data.length; i+=1) {
+  //       const page = response.data.data[i]
+  //       // https://router.vuejs.org/guide/advanced/dynamic-routing.html#adding-nested-routes
+  //       Router.addRoute('root', {
+  //         path: `/${page.attributes.slug}`,
+  //         component: () => import('pages/NotImplemented.vue')
+  //       })
+  //     }
+
+  //     // console.log('routes', Router.getRoutes())
+  //   })
+  //   .catch(function (error) {
+  //     console.error('Loading dynamic routes failed', error);
+  //   })
 
   return Router;
 });
