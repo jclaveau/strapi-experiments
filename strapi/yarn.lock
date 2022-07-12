@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@_sh/strapi-plugin-ckeditor@^1.1.0":
+"@_sh/strapi-plugin-ckeditor@1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@_sh/strapi-plugin-ckeditor/-/strapi-plugin-ckeditor-1.1.0.tgz#d73415a2282a3cdf4f77bac9d5adb972b0d9c191"
   integrity sha512-3vPNLhgetVjg2fZDBcj1BwKyK4rU+3I6hAq5ZWf8szvLacL7G56DEFgOo6WQQ6//r8XjXILbIS1ekZAHCMbWrQ==
@@ -2012,7 +2012,7 @@
     "@strapi/utils" "4.2.2"
     lodash "4.17.21"
 
-"@strapi/plugin-seo@^1.7.3":
+"@strapi/plugin-seo@1.7.3":
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/@strapi/plugin-seo/-/plugin-seo-1.7.3.tgz#94b3c647a199544d40b78940b83ee7ad6a8f6159"
   integrity sha512-4SNFHljS3OirgQgFF68BfysB3vHu2X7pF1Pco7Gs0gatebshsTtg1PsHihKd2j07CkEfdxpRSt9wVknwabb7HA==
@@ -8871,7 +8871,7 @@ pg-types@^2.1.0:
     postgres-date "~1.0.4"
     postgres-interval "^1.1.0"
 
-pg@^8.7.3:
+pg@8.7.3:
   version "8.7.3"
   resolved "https://registry.yarnpkg.com/pg/-/pg-8.7.3.tgz#8a5bdd664ca4fda4db7997ec634c6e5455b27c44"
   integrity sha512-HPmH4GH4H3AOprDJOazoIcpI49XFsHCe8xlrjHkWiapdbHK+HLtbm/GQzXYAZwmPju/kzKhjaSfMACG+8cgJcw==
@@ -10597,7 +10597,7 @@ std-env@^2.2.1:
   dependencies:
     ci-info "^3.1.1"
 
-strapi-plugin-import-export-entries@^1.6.3:
+strapi-plugin-import-export-entries@1.6.3:
   version "1.6.3"
   resolved "https://registry.yarnpkg.com/strapi-plugin-import-export-entries/-/strapi-plugin-import-export-entries-1.6.3.tgz#0dbbdc4e7b29e22591aaab2f85af71450816604b"
   integrity sha512-EcnP6bEHe91FNa+XnFKvrTuI3gPAr+U+QbxXVPRVnFUaD4jpF68UOHn+Vjwid6jXOOc23OtLhro3EoE1j/Gz4Q==
@@ -10608,7 +10608,7 @@ strapi-plugin-import-export-entries@^1.6.3:
     monaco-editor-webpack-plugin "7.0.1"
     react-singleton-hook "3.3.0"
 
-strapi-plugin-navigation@^2.1.0:
+strapi-plugin-navigation@2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/strapi-plugin-navigation/-/strapi-plugin-navigation-2.1.0.tgz#f2f0270415f614c95f36a1173e97a8e1da508636"
   integrity sha512-aLI4kIRKlGcjhGkvY5thVVqCt3pVuCUTaXX3yiQ1xWvXHPcWf0uQRVXdlQmK5jyPUZEPu7hvkgd9YSk9CpTolg==
@@ -10628,7 +10628,7 @@ strapi-plugin-navigation@^2.1.0:
     slugify "^1.4.5"
     uuid "^8.3.0"
 
-strapi-plugin-sitemap@^2.0.8:
+strapi-plugin-sitemap@2.0.8:
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/strapi-plugin-sitemap/-/strapi-plugin-sitemap-2.0.8.tgz#677d8625c3864bf2e300faf9d08d5871304c7029"
   integrity sha512-OERSAtWIdaHeYgkFCFPtQisj4kuoxOerwayLhAEG+xnwtfbaZSG9kFuoRCrAMOhBkKtRgEn2jCsJGlIJf0t4iQ==
@@ -10639,7 +10639,7 @@ strapi-plugin-sitemap@^2.0.8:
     sitemap "^7.1.0"
     xml2js "^0.4.23"
 
-strapi-stripe@^2.1.4:
+strapi-stripe@2.1.4:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/strapi-stripe/-/strapi-stripe-2.1.4.tgz#9b6e35b3e69e6c74211c353a7ee4b82058a981aa"
   integrity sha512-Rvq4CUUhhLKaB2IOkYudI0VxuvprfpLHV+7vfjtzRIlQhnqpOqgVVYvNX3AoAdolFz2u6mVqMW+NuBdtsFhQdQ==
