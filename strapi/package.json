@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@_sh/strapi-plugin-ckeditor": "^1.1.0",
+    "@strapi/plugin-graphql": "4.2.2",
     "@strapi/plugin-i18n": "4.2.2",
     "@strapi/plugin-seo": "^1.7.3",
     "@strapi/plugin-users-permissions": "4.2.2",
@@ -24,7 +25,8 @@
     "pg-connection-string": "^2.5.0",
     "strapi-plugin-import-export-entries": "^1.6.3",
     "strapi-plugin-navigation": "^2.1.0",
-    "strapi-plugin-sitemap": "^2.0.8"
+    "strapi-plugin-sitemap": "^2.0.8",
+    "strapi-stripe": "^2.1.4"
   },
   "author": {
     "name": "A Strapi developer"
