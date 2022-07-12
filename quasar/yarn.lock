@@ -2730,10 +2730,10 @@
     read-pkg-up "^7.0.1"
     regenerator-runtime "^0.13.7"
 
-"@storybook/test-runner@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@storybook/test-runner/-/test-runner-0.3.0.tgz#71ce5c828279a63101c77f5228df659a618e577a"
-  integrity sha512-G2oommQRgB05tqNYyqm1Is6nh43f5Cyh3aGyhfaK5jjsRDkukL/sF2erf4Afxl1UTUbxwZonVype7YDyuT64Pw==
+"@storybook/test-runner@0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@storybook/test-runner/-/test-runner-0.4.0.tgz#b547b3cb18a954071704dcbc704c51f481cc0340"
+  integrity sha512-sKNtT11S5rTseh06XZPEfK+UlxNSfGOSboHzOsdfx7RuJ51J4crpwHiGoh7dgNNRF5P13HSZRRY7TCEfi0zHHg==
   dependencies:
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
     commander "^9.0.0"
