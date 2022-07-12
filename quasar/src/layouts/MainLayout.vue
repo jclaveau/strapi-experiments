@@ -12,7 +12,7 @@
 
         <q-toolbar-title>
           <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" alt="Best Project Ever Logo">
           </q-avatar>
           Best Project Ever
         </q-toolbar-title>
@@ -28,6 +28,7 @@
               auto-close
               color="primary"
               icon="menu"
+              aria-label="menu"
               c-split
               class="xs"
               unelevated
@@ -48,6 +49,7 @@
                     :to="navEntry.path"
                     :label="navEntry.title"
                     class="gt-xs"
+                    :aria-label="navEntry.title"
                   >
                     <q-tooltip :delay="1000">
                       <pre >{{ navEntry }}</pre>
@@ -69,6 +71,7 @@
             $q.dark.isActive ? 'light_mode' : 'dark_mode'
           "
           c-class="gt-xs"
+          :aria-label="$q.dark.isActive ? 'Light Mode' : 'Dark Mode'"
         >
         </q-btn>
         <!-- <q-btn dense flat round icon="menu" @click="toggleRightDrawer" /> -->

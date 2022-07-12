@@ -226,6 +226,25 @@
             }"
 
           >
+            <template v-slot:navigation-icon="{ active, btnProps, onClick }">
+
+              <q-btn v-if="active"
+                size="sm"
+                icon="radio_button_checked"
+                color="primary"
+                flat round dense
+                @click="onClick"
+              />
+              <q-btn v-else
+                size="sm"
+                icon="radio_button_unchecked"
+                :c-icon="btnProps.icon"
+                color="primary"
+                flat round dense
+                @click="onClick"
+              />
+            </template>
+
             <q-carousel-slide :name="1" class="column no-wrap">
               <div class="row fit justify-start items-center q-gutter-xs q-col-gutter">
               <!-- <div class="row fit justify-start items-center
@@ -245,6 +264,7 @@
                     <q-img
                       class="rounded-borders"
                       src="https://cdn.quasar.dev/img/parallax2.jpg"
+                      alt="illustration of Good News!"
                     />
                   </q-card-section>
                 </q-card>
