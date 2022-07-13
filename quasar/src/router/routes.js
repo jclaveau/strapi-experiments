@@ -7,7 +7,15 @@ const routes = [
       {
         path: '',
         name: 'home',
-        component: () => import('pages/Home.vue')
+        component: () => import('pages/Home.vue'),
+        meta: {
+          // TODO this avoids an error while navigating between
+          // the home button and the tabs. Fix it!
+          page: {
+            related: {}
+          },
+        },
+
       },
     ],
   },

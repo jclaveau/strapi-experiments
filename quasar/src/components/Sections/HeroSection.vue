@@ -31,7 +31,7 @@ import {
 } from 'vue';
 
 export default defineComponent({
-  name: 'Hero',
+  name: 'HeroSection',
   props: {
     title: String,
     label: String,

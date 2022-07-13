@@ -47,7 +47,7 @@ import {
 } from 'vue';
 
 export default defineComponent({
-  name: 'Article',
+  name: 'ArticleSection',
   props: {
     title: String,
     content: String,
