@@ -15,7 +15,7 @@
     <article>
       <header>
         <h2>{{ title }}</h2>
-        <div class="byline">
+        <div class="byline text-caption">
           <address class="author">
             By <a rel="author" href="/author/john-doe">John Doe</a>
           </address>
@@ -35,8 +35,8 @@
 </template>
 
 <style lang="scss">
-.section-article {
-
+article > section {
+  padding-top: 20px;
 }
 </style>
 

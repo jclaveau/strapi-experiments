@@ -53,6 +53,7 @@
       "components": [
         "sections.hero",
         "sections.rich-text",
+        "sections.offers-section",
         "sections.article"
       ]
     }

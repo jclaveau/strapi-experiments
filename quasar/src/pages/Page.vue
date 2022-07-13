@@ -1,13 +1,15 @@
 <template>
   <q-page
-    class="with-doc-margins app-page"
+    class="
+      with-doc-margins
+      app-page
+    "
     >
 
     <p v-if="contentLoading">
       loading...
     </p>
     <template v-else>
-      <!-- contentData: <pre>{{ JSON.stringify(contentData, null, 2) }}</pre> -->
 
       <template v-for="section, index of contentData.data.attributes.sections" :key="index">
         <!-- section: <pre>{{ JSON.stringify(section, null, 2) }}</pre> -->
@@ -16,7 +18,7 @@
         }}</pre> -->
 
         <component
-          :is="pascalCase(section.__component.split('.')[1]) + 'Section'"
+          :is="pascalCase(section.__component.split('.')[1]).replace(/(Section)?$/, 'Section')"
           class="q-my-lg"
           v-bind="section"
         >
@@ -24,14 +26,15 @@
         </component>
 
       </template>
+
+      <!-- contentData: <pre>{{ JSON.stringify(contentData, null, 2) }}</pre> -->
+
     </template>
 
   </q-page>
 </template>
 
 <style lang="scss">
-// .app-page > sections {
-// }
 </style>
 
 <script>
@@ -49,6 +52,7 @@ import { pascalCase } from "change-case";
 import HeroSection from '../components/Sections/HeroSection.vue';
 import RichTextSection from '../components/Sections/RichTextSection.vue';
 import ArticleSection from '../components/Sections/ArticleSection.vue';
+import OffersSection from '../components/Sections/OffersSection.vue';
 
 /* eslint vue/multi-word-component-names: 0 */
 export default defineComponent({
@@ -57,6 +61,7 @@ export default defineComponent({
     HeroSection,
     RichTextSection,
     ArticleSection,
+    OffersSection,
   },
   setup () {
 
@@ -72,7 +77,7 @@ export default defineComponent({
     watchEffect( () => {
       contentExec({
         method: 'GET',
-        url: `/bo/api/pages/${route.meta.page.related.id}?populate=*`,
+        url: `/bo/api/pages/${route.meta.page.related.id}?populate=deep`,
       })
     })
     // console.log('routeMeta', toRaw(route.meta))
