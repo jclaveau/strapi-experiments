@@ -173,6 +173,7 @@
               color="grey-2"
               size="sm"
               :label="navEntry.title"
+              :to="navEntry.path"
             >
               <q-tooltip :delay="1000">
                 <pre >{{ navEntry }}</pre>
