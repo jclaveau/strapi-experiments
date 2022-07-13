@@ -4,6 +4,8 @@ import {
 } from 'vue-router';
 import routes from './routes';
 import axios from 'axios';
+/* eslint no-unused-vars: 0 */
+import { pascalCase } from "change-case";
 
 /*
  * If not building with SSR mode, you can
@@ -33,16 +35,26 @@ export default route( async (/* { store, ssrContext } */) => {
     .then(function(response) {
       // TODO retry https://stackoverflow.com/a/38225011/2714285
 
-      console.log('response', response.data)
+      // console.log('response', response.data)
 
       const pages = Object.values(response.data.pages)
       for (let i=0; i < pages.length; i+=1) {
         const page = pages[i]
         // console.log('page', page)
+        /* eslint no-underscore-dangle: 0 */
+        const component = pascalCase(page.related.contentType.replace(/^\w+::\w+\./, ''))
+        // const component = camelCase(page.related.contentType)
+        // console.log('component', component)
         // https://router.vuejs.org/guide/advanced/dynamic-routing.html#adding-nested-routes
-        Router.addRoute('root', {
+        Router.addRoute(page.parent ?? 'root', {
+          name: page.id,
           path: page.path,
-          component: () => import('pages/NotImplemented.vue')
+          component: () => import(`../pages/${component}.vue`),
+          // component: () => import('pages/NotImplemented.vue')
+          // props: true,
+          meta: {
+            related: page.related,
+          },
         })
       }
 
