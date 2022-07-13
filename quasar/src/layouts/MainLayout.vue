@@ -46,41 +46,66 @@
               </template>
             </q-btn-dropdown>
 
-            <q-tabs align="left">
-              <!-- <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" /> -->
-                <template v-for="navEntry, index of mainNavData" :key="index">
-                  <q-route-tab
-                    v-if="navEntry.items.length == 0"
-                    :to="navEntry.path"
-                    :label="navEntry.title"
-                    class="gt-xs"
-                    :aria-label="navEntry.title"
-                  >
-                    <q-tooltip :delay="1000">
-                      <pre >{{ navEntry }}</pre>
-                    </q-tooltip>
-                  </q-route-tab>
+            <q-tabs
+              align="left"
 
-                  <q-btn-dropdown
-                    v-else
-                    auto-close
-                    split
-                    stretch
-                    flat
-                    :label="navEntry.title"
-                    :to="navEntry.path"
-                  >
-                    <q-list>
-                      <q-item
-                         v-for="subNavEntry, subIndex of navEntry.items" :key="subIndex"
-                        clickable
-                        v-ripple
-                        :to="subNavEntry.path" exact
-                      >
-                        <q-item-section>{{ subNavEntry.title }}</q-item-section>
-                      </q-item>
-                    </q-list>
-                  </q-btn-dropdown>
+              active-color="secondary"
+              indicator-color="secondary"
+              >
+
+              <!-- <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" /> -->
+
+              <template v-for="navEntry, index of mainNavData" :key="index">
+
+                <q-route-tab
+                  v-if="navEntry.items.length == 0"
+                  :to="navEntry.path"
+                  :label="navEntry.title"
+                  class="gt-xs"
+                  :aria-label="navEntry.title"
+                >
+                  <q-tooltip :delay="1000">
+                    <pre >{{ navEntry }}</pre>
+                  </q-tooltip>
+
+                </q-route-tab>
+
+
+                <q-btn-dropdown
+                  v-if="navEntry.items.length != 0"
+                  split
+                  stretch
+                  flat
+                  :c-label="navEntry.title"
+                  :to="navEntry.path"
+                >
+                  <template v-slot:label>
+
+                    <q-route-tab
+                      :to="navEntry.path"
+                      :label="navEntry.title"
+                      class="gt-xs"
+                      :aria-label="navEntry.title"
+                      @click.stop
+                    >
+                      <q-tooltip :delay="1000">
+                        <pre >{{ navEntry }}</pre>
+                      </q-tooltip>
+                    </q-route-tab>
+
+                  </template>
+
+                  <q-list>
+                    <q-item
+                        v-for="subNavEntry, subIndex of navEntry.items" :key="subIndex"
+                      clickable
+                      v-ripple
+                      :to="subNavEntry.path" exact
+                    >
+                      <q-item-section>{{ subNavEntry.title }}</q-item-section>
+                    </q-item>
+                  </q-list>
+                </q-btn-dropdown>
 
               </template>
             </q-tabs>
@@ -164,6 +189,10 @@
 <style lang="scss">
 .copyright {
   color: $grey-3;
+}
+
+.q-tabs .q-btn-dropdown > .q-btn {
+  padding: 0;
 }
 </style>
 
