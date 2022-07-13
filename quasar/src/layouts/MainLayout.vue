@@ -11,10 +11,13 @@
         <q-btn flat round dense icon="search" /> -->
 
         <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" alt="Best Project Ever Logo">
-          </q-avatar>
-          Best Project Ever
+          <q-btn
+            icon="img:https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg"
+            label="Best Project Ever"
+            size="lg"
+            to="/"
+            unelevated
+            />
         </q-toolbar-title>
 
         <nav class="no-wrap">

@@ -22,7 +22,7 @@ import {
 } from 'vue';
 
 export default defineComponent({
-  name: 'RichText',
+  name: 'RichTextSection',
   props: {
     content: String,
   },

@@ -11,10 +11,12 @@
 
       <template v-for="section, index of contentData.data.attributes.sections" :key="index">
         <!-- section: <pre>{{ JSON.stringify(section, null, 2) }}</pre> -->
-        <!-- section: <pre>{{ JSON.stringify(pascalCase(section.__component.split('.')[1]), null, 2) }}</pre> -->
+        <!-- <pre>{{
+          JSON.stringify(pascalCase(section.__component.split('.')[1]), null, 2)
+        }}</pre> -->
 
         <component
-          :is="pascalCase(section.__component.split('.')[1])"
+          :is="pascalCase(section.__component.split('.')[1]) + 'Section'"
           class="q-my-lg"
           v-bind="section"
         >
@@ -36,27 +38,27 @@
 import {
   defineComponent,
   // ref,
-  onMounted,
+  // onMounted,
   watchEffect,
-  toRaw,
+  // toRaw,
 } from 'vue';
 import { useAxios } from '@vue-composable/axios'
 import { useRoute } from 'vue-router';
 import { pascalCase } from "change-case";
 
-import Hero from '../components/Sections/Hero.vue';
-import RichText from '../components/Sections/RichText.vue';
-import Article from '../components/Sections/Article.vue';
+import HeroSection from '../components/Sections/HeroSection.vue';
+import RichTextSection from '../components/Sections/RichTextSection.vue';
+import ArticleSection from '../components/Sections/ArticleSection.vue';
 
-
+/* eslint vue/multi-word-component-names: 0 */
 export default defineComponent({
   name: 'Page',
   components: {
-    Hero,
-    RichText,
-    Article,
+    HeroSection,
+    RichTextSection,
+    ArticleSection,
   },
-  setup (props) {
+  setup () {
 
     const {
       data:    contentData,
@@ -70,7 +72,7 @@ export default defineComponent({
     watchEffect( () => {
       contentExec({
         method: 'GET',
-        url: `/bo/api/pages/${route.meta.related.id}?populate=*`,
+        url: `/bo/api/pages/${route.meta.page.related.id}?populate=*`,
       })
     })
     // console.log('routeMeta', toRaw(route.meta))

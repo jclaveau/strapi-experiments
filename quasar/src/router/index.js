@@ -49,11 +49,12 @@ export default route( async (/* { store, ssrContext } */) => {
         Router.addRoute(page.parent ?? 'root', {
           name: page.id,
           path: page.path,
-          component: () => import(`../pages/${component}.vue`),
+          component: () => import(`../pages/Page.vue`),
+          // component: () => import(`../pages/${component}.vue`),
           // component: () => import('pages/NotImplemented.vue')
           // props: true,
           meta: {
-            related: page.related,
+            page,
           },
         })
       }
