@@ -21,7 +21,7 @@ else {
 
 module.exports = ({ env }) => {
   // console.log('env/production/database.js', process.env)
-  return {
+  const dbConfig = {
     connection: {
       client: 'postgres',
       connection: {
@@ -37,4 +37,7 @@ module.exports = ({ env }) => {
       debug: false,
     },
   }
+
+  console.log('env/production/database.js', dbConfig)
+  return dbConfig
 };

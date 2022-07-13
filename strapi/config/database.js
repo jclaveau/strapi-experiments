@@ -1,4 +1,5 @@
 const path = require('path');
+console.log('config/database.js env', process.env)
 
 module.exports = ({ env }) => {
   const client = env("DATABASE_CLIENT", "sqlite")
@@ -37,6 +38,7 @@ module.exports = ({ env }) => {
     throw new Error(`Unhandled db client type in dev mode: ${client}`)
   }
 
-  process.env != 'production' && console.log('config/database.js', dbConfig)
+  // process.env.NODE_ENV != 'production' &&
+  console.log('config/database.js', dbConfig)
   return dbConfig
 };
