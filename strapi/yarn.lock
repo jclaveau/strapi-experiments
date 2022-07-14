@@ -9981,10 +9981,10 @@ std-env@^2.2.1:
   dependencies:
     ci-info "^3.1.1"
 
-strapi-plugin-import-export-entries@1.6.3:
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/strapi-plugin-import-export-entries/-/strapi-plugin-import-export-entries-1.6.3.tgz#0dbbdc4e7b29e22591aaab2f85af71450816604b"
-  integrity sha512-EcnP6bEHe91FNa+XnFKvrTuI3gPAr+U+QbxXVPRVnFUaD4jpF68UOHn+Vjwid6jXOOc23OtLhro3EoE1j/Gz4Q==
+strapi-plugin-import-export-entries@1.6.4:
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-import-export-entries/-/strapi-plugin-import-export-entries-1.6.4.tgz#7b15f02a5cab0df5ec7ad606ee90df5f9c2ee976"
+  integrity sha512-tdOU4qCcrV/V/O6i+dLdPtQ4/WH6Vyr9aALe/QIKCftY8sbQ1irZI7/47oYpS7mrWngdJ17u/Ra6LOnJtMGx9w==
   dependencies:
     "@monaco-editor/react" "4.4.5"
     csvtojson "2.0.10"
