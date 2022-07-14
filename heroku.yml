@@ -8,7 +8,8 @@ build:
       dockerfile: Dockerfile.heroku
       target: build-stage
   config:
-    NODE_ENV: production
+    # NODE_ENV: production
+    NODE_ENV: development
     DATABASE_URL: $DATABASE_URL
     QUASAR_PORT: $PORT
     STRAPI_WEBSITE_URL: https://strapi4-quasarv2.herokuapp.com
