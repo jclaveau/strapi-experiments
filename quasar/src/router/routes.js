@@ -4,19 +4,19 @@ const routes = [
     name: 'root',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      {
-        path: '',
-        name: 'home',
-        component: () => import('pages/Home.vue'),
-        meta: {
-          // TODO this avoids an error while navigating between
-          // the home button and the tabs. Fix it!
-          page: {
-            related: {}
-          },
-        },
+      // {
+      //   path: '',
+      //   name: 'home',
+      //   component: () => import('pages/Home.vue'),
+      //   meta: {
+      //     // TODO this avoids an error while navigating between
+      //     // the home button and the tabs. Fix it!
+      //     page: {
+      //       related: {}
+      //     },
+      //   },
 
-      },
+      // },
     ],
   },
 

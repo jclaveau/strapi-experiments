@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_cards_simple_cards",
+  "info": {
+    "displayName": "Simple Card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "target_page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    },
+    "css_classes": {
+      "type": "string"
+    }
+  }
+}

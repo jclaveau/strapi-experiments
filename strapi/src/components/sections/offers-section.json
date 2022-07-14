@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sections_offers_sections",
+  "info": {
+    "displayName": "Offers",
+    "icon": "donate",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cards.simple-card"
+    }
+  }
+}

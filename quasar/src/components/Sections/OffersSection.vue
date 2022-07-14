@@ -20,64 +20,48 @@
           v-for="card, index of cards" :key="index"
           class="col-12 col-sm-4"
         >
+        <!-- <pre>{{
+          JSON.stringify(card.target_page.data, null, 2)
+        }}</pre> -->
 
-          <!-- <router-link
-            :to="card.target_page.data.attributes."
-            custom
-            c-v-slot:default="props"
-          > -->
-            <q-card
-              :class="card.css_classes + ' solution-card'"
-              :style="{
-              }"
-              >
-              <q-card-section>
-                <!-- <div class="text-h6">A Good Solution</div> -->
-                <div class="text-h6">{{ card.title }}</div>
-                <!-- <div class="text-subtitle2">by John Doe</div> -->
-              </q-card-section>
+          <template v-if="card.target_page.data != null">
+            <router-link
+              :to="{ name: card.target_page.data.attributes.slug }"
+            >
+              <q-card
+                :class="card.css_classes + ' solution-card'"
+                :style="{
+                }"
+                >
+                <q-card-section>
+                  <div class="text-h6">{{ card.title }}</div>
+                  <!-- <div class="text-subtitle2">by John Doe</div> -->
+                </q-card-section>
 
-              <q-card-section class="q-pt-none">
-                {{ description }}
-              </q-card-section>
-            </q-card>
+                <q-card-section class="q-pt-none">
+                  {{ card.description }}
+                </q-card-section>
+              </q-card>
 
-          <!-- </router-link> -->
+            </router-link>
+          </template>
+          <q-card
+            v-else
+            :class="card.css_classes + ' solution-card'"
+            :style="{
+            }"
+            >
+            <q-card-section>
+              <div class="text-h6">{{ card.title }}</div>
+            </q-card-section>
+
+            <q-card-section class="q-pt-none">
+              {{ card.description }}
+            </q-card-section>
+          </q-card>
+
+
         </div>
-
-      <!-- <div class="col-12 col-sm-4">
-        <q-card
-          class="solution-card text-white bg-red-4"
-          :style="{
-          }"
-        >
-          <q-card-section>
-            <div class="text-h6">An Interesting Solution</div>
-            <div class="text-subtitle2">by John Doe</div>
-          </q-card-section>
-
-          <q-card-section class="q-pt-none">
-            {{ lorem }}
-          </q-card-section>
-        </q-card>
-      </div>
-
-      <div class="col-12 col-sm-4">
-        <q-card
-          class="solution-card text-white bg-indigo-4"
-          :style="{
-          }"
-        >
-          <q-card-section>
-            <div class="text-h6">A solution you do not expect</div>
-            <div class="text-subtitle2">by John Doe</div>
-          </q-card-section>
-
-          <q-card-section class="q-pt-none">
-            {{ lorem }}
-          </q-card-section>
-        </q-card>
-      </div> -->
     </div>
 
   </section>

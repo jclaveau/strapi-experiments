@@ -25,24 +25,12 @@
     </section>
     <template v-else>
 
-      <template v-for="section, index of contentData.data.attributes.sections" :key="index">
-        <!-- section: <pre>{{ JSON.stringify(section, null, 2) }}</pre> -->
-
-        <!-- <pre>{{
-          JSON.stringify(pascalCase(section.__component.split('.')[1]), null, 2)
-        }}</pre> -->
-
-        <component
-          :is="pascalCase(section.__component.split('.')[1]).replace(/(Section)?$/, 'Section')"
-          class="q-my-lg"
-          v-bind="section"
-        >
-
-        </component>
-
-      </template>
-
       <!-- contentData: <pre>{{ JSON.stringify(contentData, null, 2) }}</pre> -->
+      <ArticleSection
+        :title="contentData.data.attributes.title"
+        :content="contentData.data.attributes.content"
+        :published_on="contentData.data.attributes.publishedAt"
+      ></ArticleSection>
 
     </template>
 
@@ -50,6 +38,9 @@
 </template>
 
 <style lang="scss">
+.app-page {
+  padding-top: 20px;
+}
 </style>
 
 <script>
@@ -64,21 +55,13 @@ import { useAxios } from '@vue-composable/axios'
 import { useRoute } from 'vue-router';
 import { pascalCase } from "change-case";
 
-import HeroSection from '../components/Sections/HeroSection.vue';
-import RichTextSection from '../components/Sections/RichTextSection.vue';
 import ArticleSection from '../components/Sections/ArticleSection.vue';
-import OffersSection from '../components/Sections/OffersSection.vue';
-import NewsCarrouselSection from '../components/Sections/NewsCarrouselSection.vue';
 
 /* eslint vue/multi-word-component-names: 0 */
 export default defineComponent({
-  name: 'Page',
+  name: 'Post',
   components: {
-    HeroSection,
-    RichTextSection,
     ArticleSection,
-    OffersSection,
-    NewsCarrouselSection,
   },
   setup () {
 
@@ -91,16 +74,21 @@ export default defineComponent({
 
 
     const route = useRoute();
-    // console.log('Page.vue routeMeta', toRaw(route.meta))
+    // console.log('Post.vue routeMeta', toRaw(route.meta))
     let unwatch = watchEffect( () => {
       contentExec({
         method: 'GET',
-        url: `/bo/api/pages/${route.meta.page.related.id}?populate=deep`,
+        url: `/bo/api/posts/${route.meta.post.id}?populate=deep`,
       })
       .then(() => unwatch() )
     })
 
+
     return {
+      lorem: `
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      `,
       contentData,
       contentLoading,
       contentExec,

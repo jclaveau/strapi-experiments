@@ -51,10 +51,11 @@
       },
       "type": "dynamiczone",
       "components": [
+        "sections.article",
         "sections.hero",
-        "sections.rich-text",
         "sections.offers-section",
-        "sections.article"
+        "sections.rich-text",
+        "sections.news-carrousel"
       ]
     }
   }

@@ -60,8 +60,10 @@
 
               <template v-for="navEntry, index of mainNavData" :key="index">
 
+                <!-- <pre v-html="JSON.stringify(navEntry, null, 2)"></pre> -->
+
                 <q-route-tab
-                  v-if="navEntry.items.length == 0"
+                  v-if="navEntry.menuAttached && navEntry.items.length == 0"
                   :to="navEntry.path"
                   :label="navEntry.title"
                   class="gt-xs"
@@ -75,7 +77,7 @@
 
 
                 <q-btn-dropdown
-                  v-if="navEntry.items.length != 0"
+                  v-if="navEntry.menuAttached && navEntry.items.length != 0"
                   split
                   stretch
                   flat

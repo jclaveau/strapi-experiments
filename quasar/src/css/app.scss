@@ -7,6 +7,10 @@
   background-attachment: fixed;
 }
 
+a {
+  text-decoration: none;
+}
+
 @media (min-width: $breakpoint-sm-min) {
   .q-page.with-doc-margins {
     margin-left: 10%;

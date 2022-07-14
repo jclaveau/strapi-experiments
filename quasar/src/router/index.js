@@ -65,24 +65,35 @@ export default route( async (/* { store, ssrContext } */) => {
       console.error('Loading dynamic routes failed', error);
     })
 
-  // await axios.get('/bo/api/pages')
-  //   .then(function(response) {
-  //     // TODO retry https://stackoverflow.com/a/38225011/2714285
+  await axios.get('/bo/api/posts')
+    .then(function(response) {
+      // TODO retry https://stackoverflow.com/a/38225011/2714285
 
-  //     for (let i=0; i<response.data.data.length; i+=1) {
-  //       const page = response.data.data[i]
-  //       // https://router.vuejs.org/guide/advanced/dynamic-routing.html#adding-nested-routes
-  //       Router.addRoute('root', {
-  //         path: `/${page.attributes.slug}`,
-  //         component: () => import('pages/NotImplemented.vue')
-  //       })
-  //     }
+      for (let i=0; i<response.data.data.length; i+=1) {
+        const post = response.data.data[i]
+        // https://router.vuejs.org/guide/advanced/dynamic-routing.html#adding-nested-routes
 
-  //     // console.log('routes', Router.getRoutes())
-  //   })
-  //   .catch(function (error) {
-  //     console.error('Loading dynamic routes failed', error);
-  //   })
+        // console.log('post', post)
+        const newRoute = {
+          name: post.attributes.slug,
+          path: `/posts/${post.attributes.slug}`,
+          component: () => import('pages/Post.vue'),
+          // component: () => import('pages/NotImplemented.vue')
+          meta: {
+            post,
+          },
+        }
+
+        // console.log('newRoute', newRoute)
+
+        Router.addRoute('root', newRoute)
+      }
+
+      // console.log('routes', Router.getRoutes())
+    })
+    .catch(function (error) {
+      console.error('Loading dynamic routes failed', error);
+    })
 
   return Router;
 });

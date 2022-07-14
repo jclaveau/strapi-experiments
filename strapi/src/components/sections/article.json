@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_sections_articles",
+  "info": {
+    "displayName": "Article",
+    "icon": "file-signature",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "published_on": {
+      "type": "date"
+    },
+    "links": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}
