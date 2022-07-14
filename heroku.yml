@@ -8,11 +8,19 @@ build:
       dockerfile: Dockerfile.heroku
       target: build-stage
   config:
-    NODE_ENV: production
-    DATABASE_URL: $DATABASE_URL
-    QUASAR_PORT: $PORT
+    # Required during build so MUST be hardcoded
     STRAPI_WEBSITE_URL: https://strapi4-quasarv2.herokuapp.com
     STRAPI_URL_PREFIX: /bo
 
+    NODE_ENV: $NODE_ENV
+    DATABASE_CLIENT: $DATABASE_CLIENT
+    DATABASE_URL: $DATABASE_URL
+    QUASAR_PORT: $PORT
+    STRAPI_LOG_LEVEL: $STRAPI_LOG_LEVEL
+    STRAPI_LOG_TIMESTAMP: $STRAPI_LOG_TIMESTAMP
+    STRAPI_LOG_PRETTY_PRINT: $STRAPI_LOG_PRETTY_PRINT
+    STRAPI_LOG_FORCE_COLOR: $STRAPI_LOG_FORCE_COLOR
+
+
 run:
-  web: npx concurrently -n "Quasar,Strapi" -c "magenta,blue" "yarn --cwd /opt/quasar serve:spa" "yarn --cwd /opt/strapi start"
+  web: npx concurrently -n "Quasar,Strapi" -c "magenta,blue" "yarn --cwd /opt/quasar serve:spa" "yarn --cwd /opt/strapi develop"

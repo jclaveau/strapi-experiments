@@ -10,7 +10,7 @@ services:
         NODE_ENV: ${NODE_ENV}
         STRAPI_WEBSITE_URL: ${STRAPI_WEBSITE_URL}
         STRAPI_URL_PREFIX: ${STRAPI_URL_PREFIX}
-    image: strapi-experiments-monocontainer:latest
+    image: jclaveau/strapi-experiments-monocontainer:dev-local
     restart: unless-stopped
     tty: true
     env_file: .env

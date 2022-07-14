@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_templates",
+  "info": {
+    "displayName": "Simple Page Template",
+    "icon": "file-invoice",
+    "description": ""
+  },
+  "options": {
+    "templateName": "SimplePage"
+  },
+  "attributes": {
+    "templateName": {
+      "type": "string",
+      "maxLength": 60,
+      "default": "SimplePAge"
+    }
+  }
+}

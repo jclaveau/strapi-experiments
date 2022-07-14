@@ -1,6 +1,9 @@
+# FROM jclaveau/strapi-experiments-monocontainer:dev-local as build-stage
+# TODO requires removing .env
+
 FROM jclaveau/strapi4-quasar2-deps-heroku as build-stage
 ARG NODE_ENV=production
-ENV NODE_ENV=${NODE_ENV}
+# ENV NODE_ENV=${NODE_ENV}
 ARG STRAPI_WEBSITE_URL
 ENV STRAPI_WEBSITE_URL=${STRAPI_WEBSITE_URL}
 ARG STRAPI_URL_PREFIX
@@ -11,7 +14,9 @@ WORKDIR /opt/strapi
 COPY ./strapi/ .
 ENV PATH /opt/strapi/node_modules/.bin:$PATH
 RUN yarn && yarn build
+RUN yarn cache clean
 
 WORKDIR /opt/quasar
 COPY ./quasar/ .
 RUN yarn --production=false && yarn build
+RUN yarn cache clean --all
