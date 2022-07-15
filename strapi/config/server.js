@@ -1,3 +1,5 @@
+const cronTasks = require("./cron-tasks");
+
 module.exports = ({ env }) => {
   const serverConfig = {
     host: env('HOST', '0.0.0.0'),
@@ -8,6 +10,10 @@ module.exports = ({ env }) => {
     proxy: true,
     app: {
       keys: env.array('APP_KEYS'),
+    },
+    cron: {
+      enabled: true,
+      tasks: cronTasks,
     },
   }
 
