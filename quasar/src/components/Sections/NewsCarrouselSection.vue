@@ -2,7 +2,7 @@
   <section
     :class="[
       'doc-section',
-      // 'text-center',
+      'text-center',
       'flex',
       'items-center',
     ]"
@@ -99,7 +99,7 @@
       <!-- postPreviews: <pre>{{ JSON.stringify(postPreviews, null, 2) }}</pre> -->
 
       <q-carousel
-        v-model="slide"
+        v-model="slideXs"
         transition-prev="slide-right"
         transition-next="slide-left"
         swipeable
@@ -259,6 +259,7 @@ export default defineComponent({
 
     return {
       slide: ref(0),
+      slideXs: ref(0),
       carrouselAutoplay,
       enableAutoplay,
       disableAutoplay,

@@ -3,7 +3,10 @@
     :class="[
       'doc-section',
       'text-center',
-
+      'flex',
+      'items-center',
+      'justify-center',
+      'q-py-lg',
     ]"
     :style="{
       // border: '1px solid #000',

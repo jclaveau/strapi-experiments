@@ -171,11 +171,14 @@
           <template v-else v-for="navEntry, index of footerNavData" :key="index">
 
             <q-btn
+              v-if="navEntry.menuAttached"
               flat
               color="grey-2"
               size="sm"
               :label="navEntry.title"
               :to="navEntry.path"
+              :href="navEntry.external ? navEntry.path : null"
+              :target="navEntry.external ? '_blank' : null"
             >
               <q-tooltip :delay="1000">
                 <pre >{{ navEntry }}</pre>
@@ -183,9 +186,6 @@
             </q-btn>
           </template>
 
-        <!-- <q-btn flat color="grey-2" size="sm" label="Questions" />
-        <q-btn flat color="grey-2" size="sm" label="Cookie Settings" />
-        <q-btn flat color="grey-2" size="sm" label="About" /> -->
       </q-toolbar>
     </q-footer>
 
