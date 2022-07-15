@@ -42,11 +42,11 @@ export default route( async (/* { store, ssrContext } */) => {
         const page = pages[i]
         // console.log('page', page)
         /* eslint no-underscore-dangle: 0 */
-        const component = pascalCase(page.related.contentType.replace(/^\w+::\w+\./, ''))
+        // const component = pascalCase(page.related.contentType.replace(/^\w+::\w+\./, ''))
         // const component = camelCase(page.related.contentType)
         // console.log('component', component)
         // https://router.vuejs.org/guide/advanced/dynamic-routing.html#adding-nested-routes
-        Router.addRoute(page.parent ?? 'root', {
+        const newRoute = {
           name: page.id,
           path: page.path,
           component: () => import(`../pages/Page.vue`),
@@ -56,7 +56,10 @@ export default route( async (/* { store, ssrContext } */) => {
           meta: {
             page,
           },
-        })
+        }
+
+        // console.log('Pages newRoute', newRoute)
+        Router.addRoute(page.parent ?? 'root', newRoute)
       }
 
       // console.log('routes', Router.getRoutes())
@@ -84,7 +87,7 @@ export default route( async (/* { store, ssrContext } */) => {
           },
         }
 
-        // console.log('newRoute', newRoute)
+        // console.log('Posts newRoute', newRoute)
 
         Router.addRoute('root', newRoute)
       }
