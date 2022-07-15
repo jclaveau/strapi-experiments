@@ -50,7 +50,6 @@ export default route( async (/* { store, ssrContext } */) => {
           name: page.id,
           path: page.path,
           component: () => import(`../pages/Page.vue`),
-          // component: () => import(`../pages/${component}.vue`),
           // component: () => import('pages/NotImplemented.vue')
           // props: true,
           meta: {
@@ -62,7 +61,6 @@ export default route( async (/* { store, ssrContext } */) => {
         Router.addRoute(page.parent ?? 'root', newRoute)
       }
 
-      // console.log('routes', Router.getRoutes())
     })
     .catch(function (error) {
       console.error('Loading dynamic routes failed', error);
@@ -88,7 +86,6 @@ export default route( async (/* { store, ssrContext } */) => {
         }
 
         // console.log('Posts newRoute', newRoute)
-
         Router.addRoute('root', newRoute)
       }
 
@@ -98,5 +95,6 @@ export default route( async (/* { store, ssrContext } */) => {
       console.error('Loading dynamic routes failed', error);
     })
 
+  // console.log('routes', Router.getRoutes())
   return Router;
 });

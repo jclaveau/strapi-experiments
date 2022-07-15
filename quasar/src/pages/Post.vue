@@ -76,11 +76,12 @@ export default defineComponent({
     const route = useRoute();
     // console.log('Post.vue routeMeta', toRaw(route.meta))
     let unwatch = watchEffect( () => {
-      contentExec({
-        method: 'GET',
-        url: `/bo/api/posts/${route.meta.post.id}?populate=deep`,
-      })
-      .then(() => unwatch() )
+      if ('post' in route.meta) {
+        contentExec({
+          method: 'GET',
+          url: `/bo/api/posts/${route.meta.post.id}?populate=deep`,
+        })
+      }
     })
 
 

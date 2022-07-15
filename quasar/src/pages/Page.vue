@@ -56,7 +56,6 @@
 import {
   defineComponent,
   // ref,
-  // onMounted,
   watchEffect,
   toRaw,
 } from 'vue';
@@ -89,15 +88,16 @@ export default defineComponent({
       status:  contentStatus,
     } = useAxios()
 
-
     const route = useRoute();
-    // console.log('Page.vue routeMeta', toRaw(route.meta))
     let unwatch = watchEffect( () => {
-      contentExec({
-        method: 'GET',
-        url: `/bo/api/pages/${route.meta.page.related.id}?populate=deep`,
-      })
-      .then(() => unwatch() )
+      // console.log('Page: route', toRaw(route.meta))
+      if ('page' in route.meta) {
+        const pageId = route.meta.page.related.id
+        contentExec({
+          method: 'GET',
+          url: `/bo/api/pages/${pageId}?populate=deep`,
+        })
+      }
     })
 
     return {
