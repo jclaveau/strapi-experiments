@@ -19,7 +19,7 @@
     "@strapi/plugin-seo": "1.7.4",
     "@strapi/plugin-users-permissions": "4.2.3",
     "@strapi/strapi": "4.2.3",
-    "better-sqlite3": "7.6.1",
+    "better-sqlite3": "7.6.2",
     "pg": "8.7.3",
     "pg-connection-string": "2.5.0",
     "strapi-plugin-import-export-entries": "1.6.4",
