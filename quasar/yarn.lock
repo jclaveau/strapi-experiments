@@ -2743,15 +2743,15 @@
     read-pkg-up "^7.0.1"
     regenerator-runtime "^0.13.7"
 
-"@storybook/test-runner@0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@storybook/test-runner/-/test-runner-0.4.0.tgz#b547b3cb18a954071704dcbc704c51f481cc0340"
-  integrity sha512-sKNtT11S5rTseh06XZPEfK+UlxNSfGOSboHzOsdfx7RuJ51J4crpwHiGoh7dgNNRF5P13HSZRRY7TCEfi0zHHg==
+"@storybook/test-runner@0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@storybook/test-runner/-/test-runner-0.5.0.tgz#cd766f3509537fe0f709607df706a6e5871e2fc4"
+  integrity sha512-It/lbQ5sBltyrYNozyN/TmI7fBaLupYQTrlvHikWdyVBOUDIWXKBeaR2M2GU2e+0BrqNY7u/JPJNP7diEBGO/Q==
   dependencies:
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
+    can-bind-to-host "^1.1.1"
     commander "^9.0.0"
     global "^4.4.0"
-    is-localhost-ip "^1.4.0"
     jest-playwright-preset "^1.7.2"
     jest-serializer-html "^7.1.0"
     jest-watch-typeahead "^1.0.0"
@@ -4965,6 +4965,11 @@ camelcase@^6.2.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-6.3.0.tgz#5685b95eb209ac9c0c177467778c9c84df58ba9a"
   integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
+
+can-bind-to-host@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/can-bind-to-host/-/can-bind-to-host-1.1.1.tgz#e858f37e78303eca045926992335f1a83cd16fcf"
+  integrity sha512-N77gqI16w76kZEmb5keGBWJRydYaYv2N1wJc7vbg7ElSHI8jcMsyvFPtyJ4lFL3jFbloAqbilnZKU+TYJaGhNg==
 
 caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001335, caniuse-lite@^1.0.30001359:
   version "1.0.30001361"
@@ -8856,11 +8861,6 @@ is-interactive@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-interactive/-/is-interactive-1.0.0.tgz#cea6e6ae5c870a7b0a0004070b7b587e0252912e"
   integrity sha512-2HvIEKRoqS62guEC+qBjpvRubdX910WCMuJTZ+I9yvqKU2/12eSL549HMwtabb4oupdj2sMP50k+XJfB/8JE6w==
-
-is-localhost-ip@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/is-localhost-ip/-/is-localhost-ip-1.4.0.tgz#dd66aaabcbb5dbbc943e00adad5f715d2c3b3a1d"
-  integrity sha512-cN7SzlY7BVxSeoJu5equjsZaKSgD4HCfXrTwu0Jgbq5BbT1BU+D7Lyi/l1KO8H0un0JTlxcQaT/GWVapu+DIDg==
 
 is-map@^2.0.2:
   version "2.0.2"
