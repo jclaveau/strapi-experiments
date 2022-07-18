@@ -8,8 +8,17 @@
 }
 
 a {
-  text-decoration: none;
+  color: inherit;
+
+  &.router-link {
+    text-decoration: none;
+  }
 }
+
+.q-item .router-link-active {
+  color: var(--q-primary);
+}
+
 
 @media (min-width: $breakpoint-sm-min) {
   .q-page.with-doc-margins {

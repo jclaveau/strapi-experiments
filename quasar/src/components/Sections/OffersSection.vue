@@ -30,6 +30,7 @@
           <template v-if="card.target_page.data != null">
             <router-link
               :to="{ name: card.target_page.data.attributes.slug }"
+              class="router-link"
             >
               <q-card
                 :class="card.css_classes + ' solution-card'"

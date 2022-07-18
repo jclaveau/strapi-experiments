@@ -67,7 +67,7 @@
 
               <router-link
                 :to="{ name: item.post.data.attributes.slug }"
-                class="card-link full-height"
+                class="card-link full-height router-link"
                 c-custom
                 c-v-slot="{ navigate, href, route }"
               >

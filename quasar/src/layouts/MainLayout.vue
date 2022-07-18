@@ -2,22 +2,29 @@
   <q-layout view="hHh lpR fFf">
 
     <q-header elevated
-      class="bg-primary text-white q-px-md no-wrap"
+      class="bg-primary text-white no-wrap"
       height-hint="98"
       >
 
-      <q-toolbar>
+      <q-toolbar
+        class="q-pa-none"
+      >
         <!-- <q-btn flat round dense icon="menu" />
         <q-btn flat round dense icon="search" /> -->
 
-        <q-toolbar-title>
+        <q-toolbar-title
+        >
           <q-btn
             icon="img:https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg"
             label="Best Project Ever"
             size="lg"
             to="/"
             unelevated
-            />
+            class="logo"
+            padding="0 0 0 sm"
+            style="font-size: 29px"
+            no-wrap
+          />
         </q-toolbar-title>
 
         <nav class="no-wrap">
@@ -27,37 +34,22 @@
           </p>
           <template v-else>
 
-            <q-btn-dropdown
-              auto-close
-              color="primary"
+            <q-btn
               icon="menu"
               aria-label="menu"
-              c-split
-              class="xs"
               unelevated
+              size="lg"
+              class="xs"
+              @click="toggleLeftDrawer()"
             >
-              <template v-for="navEntry, index of mainNavData" :key="index">
-                <q-list>
-                  <q-item
-                    clickable
-                    v-ripple
-                    :to="navEntry.path" exact
-                  >
-                    <q-item-section>{{ navEntry.title }}</q-item-section>
-                  </q-item>
-                </q-list>
-              </template>
-            </q-btn-dropdown>
+            </q-btn>
 
             <q-tabs
               align="left"
-
               active-color="secondary"
               indicator-color="secondary"
+              class="gt-xs"
               >
-
-              <!-- <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" /> -->
-
               <template v-for="navEntry, index of mainNavData" :key="index">
 
                 <!-- <pre v-html="JSON.stringify(navEntry, null, 2)"></pre> -->
@@ -66,15 +58,12 @@
                   v-if="navEntry.menuAttached && navEntry.items.length == 0"
                   :to="navEntry.path"
                   :label="navEntry.title"
-                  class="gt-xs"
                   :aria-label="navEntry.title"
                 >
                   <q-tooltip :delay="1000">
                     <pre >{{ navEntry }}</pre>
                   </q-tooltip>
-
                 </q-route-tab>
-
 
                 <q-btn-dropdown
                   v-if="navEntry.menuAttached && navEntry.items.length != 0"
@@ -102,7 +91,7 @@
 
                   <q-list>
                     <q-item
-                        v-for="subNavEntry, subIndex of navEntry.items" :key="subIndex"
+                      v-for="subNavEntry, subIndex of navEntry.items" :key="subIndex"
                       clickable
                       v-ripple
                       :to="subNavEntry.path" exact
@@ -115,9 +104,7 @@
               </template>
             </q-tabs>
           </template>
-
         </nav>
-
 
         <q-btn
           dense
@@ -127,7 +114,7 @@
           :icon="
             $q.dark.isActive ? 'light_mode' : 'dark_mode'
           "
-          c-class="gt-xs"
+          class="gt-xs"
           :aria-label="$q.dark.isActive ? 'Light Mode' : 'Dark Mode'"
         >
         </q-btn>
@@ -138,12 +125,88 @@
     </q-header>
 
     <q-drawer
-      c-show-if-above
+      v-if="$q.screen.xs"
       v-model="leftDrawerOpen"
       side="left"
       bordered
+    >
+      <q-toolbar
+        class="bg-primary text-white q-pa-none no-wrap"
       >
-      <!-- drawer content -->
+        <q-toolbar-title>
+          <q-btn
+            icon="img:https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg"
+            label="Best Project Ever"
+            size="lg"
+            to="/"
+            unelevated
+            class="logo"
+            padding="0 0 0 sm"
+            style="font-size: 29px"
+            no-wrap
+          />
+
+        </q-toolbar-title>
+      </q-toolbar>
+
+      <q-scroll-area class="fit">
+        <q-list>
+
+          <template v-for="navEntry, index of mainNavData" :key="index">
+            <template v-if="navEntry.menuAttached">
+              <q-item
+                v-if="navEntry.items.length == 0"
+                clickable
+                :to="navEntry.path"
+                v-ripple
+              >
+                <q-item-section>
+                  {{ navEntry.title }}
+                </q-item-section>
+              </q-item>
+
+              <q-expansion-item
+                v-else
+                expand-separator
+                c-icon="mail"
+                :label="navEntry.title"
+                c-caption="5 unread emails"
+                c-default-opened
+              >
+
+                <template v-slot:header>
+                  <q-item-section>
+                    <router-link
+                      :to="navEntry.path"
+                      @click.stop
+                      v-ripple
+                      class="router-link"
+                    >
+                      {{ navEntry.title }}
+                    </router-link>
+                  </q-item-section>
+                </template>
+
+                <q-list
+                  v-if="navEntry.items.length"
+                >
+                  <q-item
+                    v-for="subNavEntry, subIndex of navEntry.items" :key="subIndex"
+                    clickable
+                    v-ripple
+                    :to="subNavEntry.path" exact
+                  >
+                    <q-item-section>{{ subNavEntry.title }}</q-item-section>
+                  </q-item>
+                </q-list>
+              </q-expansion-item>
+              <!-- <q-separator :key="'sep' + index"  v-if="menuItem.separator" /> -->
+            </template>
+          </template>
+
+        </q-list>
+      </q-scroll-area>
+
     </q-drawer>
 
     <q-drawer
@@ -158,7 +221,11 @@
       <router-view />
     </q-page-container>
 
-    <q-footer elevated class="bg-grey-6 text-white">
+    <q-footer
+      elevated
+      reveal
+      class="bg-grey-6 text-white"
+    >
       <q-toolbar>
         <span class="copyright text-caption">
           &copy; {{ new Date().getFullYear() }} Your Promising Company
@@ -200,14 +267,23 @@
 .q-tabs .q-btn-dropdown > .q-btn {
   padding: 0;
 }
+
+.logo span.block {
+  font-size: 20px;
+}
+
 </style>
 
 <script>
 import { ref, watchEffect } from 'vue'
 import { useAxios } from '@vue-composable/axios'
+import { useQuasar } from 'quasar'
 
 export default {
   setup () {
+
+    const $q = useQuasar()
+
     const leftDrawerOpen = ref(false)
     const rightDrawerOpen = ref(false)
 
@@ -240,9 +316,11 @@ export default {
     })
 
     return {
+      $q,
+
       leftDrawerOpen,
       toggleLeftDrawer () {
-        // leftDrawerOpen.value = !leftDrawerOpen.value
+        leftDrawerOpen.value = !leftDrawerOpen.value
       },
 
       rightDrawerOpen,
