@@ -9864,10 +9864,10 @@ std-env@^3.0.1:
   resolved "https://registry.yarnpkg.com/std-env/-/std-env-3.1.1.tgz#1f19c4d3f6278c52efd08a94574a2a8d32b7d092"
   integrity sha512-/c645XdExBypL01TpFKiG/3RAa/Qmu+zRi0MwAmrdEkwHNuN0ebo8ccAXBBDa5Z0QOJgBskUIbuCK91x0sCVEw==
 
-strapi-plugin-import-export-entries@1.6.7:
-  version "1.6.7"
-  resolved "https://registry.yarnpkg.com/strapi-plugin-import-export-entries/-/strapi-plugin-import-export-entries-1.6.7.tgz#e3e4a8ae942ee7c9fd2b4bd5b42cce2554ff25f3"
-  integrity sha512-bpC5j+Ig3IGnzKxUPhcsRlkROMcsSyeiEDna7KhNAlErXTOQUeWi/7NMbfnuLx96W0sulpUAn+mQWoXfUEWtIQ==
+strapi-plugin-import-export-entries@1.6.9:
+  version "1.6.9"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-import-export-entries/-/strapi-plugin-import-export-entries-1.6.9.tgz#d026d045ceb37cc769b26ae2ca3311fd9ad290be"
+  integrity sha512-1e1Mmlk7feJIdQEVJ1yBdtwu1n1/78PTyC/26HdR8grnkwfqW9QQ9r1tGs1/FyFc6UKGQIpG9isJAh/W8Z6AmQ==
   dependencies:
     "@monaco-editor/react" "4.4.5"
     csvtojson "2.0.10"
