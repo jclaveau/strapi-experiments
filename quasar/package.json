@@ -22,7 +22,7 @@
     "chromatic": "npx chromatic --project-token=996a9c75eb0a"
   },
   "dependencies": {
-    "@quasar/extras": "1.14.3",
+    "@quasar/extras": "1.15.0",
     "@vue-composable/axios": "1.0.0-beta.24",
     "axios": "0.27.2",
     "change-case": "4.1.2",
