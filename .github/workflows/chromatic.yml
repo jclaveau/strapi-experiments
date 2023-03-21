@@ -4,6 +4,11 @@ name: 'Chromatic Publish'
 
 on: pull_request # Avoids passing Chromatic's snapshots threshold
 
+# https://stackoverflow.com/a/72408109/2714285
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+  
 jobs:
   test:
     defaults:
