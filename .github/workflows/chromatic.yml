@@ -12,7 +12,7 @@ concurrency:
 jobs:
   test:
     # Disable chromatic push during Renovate's updates
-    if: ! contains(github.ref, 'renovate/')
+    if: contains(github.ref, 'renovate/') == false
     defaults:
       run:
         working-directory: quasar
