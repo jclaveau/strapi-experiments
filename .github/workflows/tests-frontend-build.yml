@@ -13,17 +13,20 @@ jobs:
 
     strategy:
       fail-fast: false
-      matrix:
-        node-version: [ 16 ]
 
     steps:
     - uses: actions/checkout@v3
+
+    # https://github.com/renovatebot/renovate/issues/7716#issuecomment-843239292
+    - name: Read Node.js version from package.json
+      run: echo ::set-output name=nodeVersion::$(node -p "require('./package.json').engines.node")
+      id: engines
 
     # https://github.com/actions/setup-node#caching-global-packages-data
     - uses: actions/setup-node@v3
       with:
         # https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#multiple-operating-systems-and-architectures
-        node-version: ${{ matrix.node-version }}
+        node-version: ${{ steps.engines.outputs.nodeVersion }}
         cache: 'yarn'
         cache-dependency-path: quasar/yarn.lock
 
