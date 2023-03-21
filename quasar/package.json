@@ -50,7 +50,7 @@
     "@vue/devtools": "6.2.1",
     "autoprefixer": "10.4.14",
     "babel-loader": "8.2.5",
-    "chromatic": "6.7.1",
+    "chromatic": "6.17.2",
     "eslint": "8.20.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-plugin-import": "2.26.0",
