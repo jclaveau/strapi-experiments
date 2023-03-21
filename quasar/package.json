@@ -57,7 +57,7 @@
     "eslint-plugin-storybook": "0.6.11",
     "eslint-plugin-vue": "9.9.0",
     "jest": "27.5.1",
-    "vue-loader": "17.0.0"
+    "vue-loader": "17.0.1"
   },
   "engines": {
     "node": "16",
