@@ -7,9 +7,6 @@ jobs:
 
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    env:
-      # for storybook 
-      NODE_OPTIONS: --openssl-legacy-provider
     defaults:
       run:
         working-directory: ./quasar
@@ -42,7 +39,7 @@ jobs:
     # https://storybook.js.org/tutorials/ui-testing-handbook/react/en/automate/
     - name: Serve Storybook and run tests
       run: |
-        npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+        export NODE_OPTIONS=--openssl-legacy-provider && npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
           "npx http-server storybook-static --port 6006 --silent" \
           "npx wait-on tcp:6006 && yarn test:storybook:coverage"
 
