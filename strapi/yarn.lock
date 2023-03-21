@@ -9887,10 +9887,10 @@ strapi-plugin-populate-deep@0.1.3:
   resolved "https://registry.yarnpkg.com/strapi-plugin-populate-deep/-/strapi-plugin-populate-deep-0.1.3.tgz#0e9e6fc585154a5f0e99c0d6cf3ca3fd72db5a2e"
   integrity sha512-AYjh7eI7zsZe/usl6+jPe0+y4wqbIJnHpSJG4c1u/VKFNK8V1WUY9WehMsYTOP35ZayuWz24v/Na7cN9oikUpQ==
 
-strapi-plugin-sitemap@2.0.8:
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/strapi-plugin-sitemap/-/strapi-plugin-sitemap-2.0.8.tgz#677d8625c3864bf2e300faf9d08d5871304c7029"
-  integrity sha512-OERSAtWIdaHeYgkFCFPtQisj4kuoxOerwayLhAEG+xnwtfbaZSG9kFuoRCrAMOhBkKtRgEn2jCsJGlIJf0t4iQ==
+strapi-plugin-sitemap@2.0.9:
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-sitemap/-/strapi-plugin-sitemap-2.0.9.tgz#159ef47bc6bc9b2fb1740df916a31455f07b4aa8"
+  integrity sha512-qFldvSZoy/iWRUiq1tO/lr9qkL+iWLnh/X38Ck+wdsOjj7gWE9fIl4trNWsD8PhNsnyRhb+G1onufKCyyFfnEw==
   dependencies:
     immutable "^3.8.2"
     redux-immutable "^4.0.0"
