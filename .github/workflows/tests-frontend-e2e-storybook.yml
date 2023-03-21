@@ -1,6 +1,6 @@
 name: Tests Front - e2e - Storybook
 
-on: [push, pull_request]
+on: [push, pull_request, merge_group]
 
 jobs:
   test:
@@ -14,7 +14,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [ 16 ]
+        node-version: [ 16, 18 ]
 
     steps:
     - uses: actions/checkout@v3
