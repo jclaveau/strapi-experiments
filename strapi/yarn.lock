@@ -9768,10 +9768,10 @@ strapi-plugin-sitemap@2.0.9:
     sitemap "^7.1.0"
     xml2js "^0.4.23"
 
-strapi-stripe@2.6.3:
-  version "2.6.3"
-  resolved "https://registry.yarnpkg.com/strapi-stripe/-/strapi-stripe-2.6.3.tgz#a11d7283df30055125c7d5cb257d5c43e48ae9a7"
-  integrity sha512-gDSvFIN9NSjYFpzsw2J/noedIVSNPP/43a94QujGtwKTimdWUIRIWDa27w51OIgSYz5CAotj6gXh4BVVk/yj9A==
+strapi-stripe@3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/strapi-stripe/-/strapi-stripe-3.2.1.tgz#bfdb410c074f2063f947b4d51f54f0f2e95fa19b"
+  integrity sha512-U1tZQUH3gEhNakDG2bsmqnucY5l/sp6AXcfGHLxoSY137ylzaB3cZcVLu2czuTqKarJKdKVBR2NWfzcZj7aQfA==
   dependencies:
     better-sqlite3 "^7.6.2"
     html-react-parser "^1.4.10"

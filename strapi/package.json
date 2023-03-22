@@ -26,7 +26,7 @@
     "strapi-plugin-navigation": "2.2.4",
     "strapi-plugin-populate-deep": "2.0.0",
     "strapi-plugin-sitemap": "2.0.9",
-    "strapi-stripe": "2.6.3"
+    "strapi-stripe": "3.2.1"
   },
   "author": {
     "name": "A Strapi developer"
