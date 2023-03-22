@@ -1792,11 +1792,12 @@
     "@strapi/utils" "4.2.3"
     lodash "4.17.21"
 
-"@strapi/plugin-seo@1.7.4":
-  version "1.7.4"
-  resolved "https://registry.yarnpkg.com/@strapi/plugin-seo/-/plugin-seo-1.7.4.tgz#0f6d48f96a136e954cb1bd44fb59e5b2d8d2c8e0"
-  integrity sha512-e1AXkuXZLEpWiXAXuEdIxTkzH7qh6GiMw62coqiFN8/O3VzacTzOXzqCj1MY+CRky0EBBde1VmDVqlTrZm9Ltw==
+"@strapi/plugin-seo@1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@strapi/plugin-seo/-/plugin-seo-1.8.0.tgz#cd6d9e3d00d3c15577d8d533cc7ef9206ab47040"
+  integrity sha512-o3llsICF9gjTALQV7D9k/Q4XblYGlsI3Z+QRsM0tsaU890ROZqAjeloZ4sxfPaX7NlrGPuSslDMPxlnywz3jow==
   dependencies:
+    date-fns "^2.29.3"
     eslint-plugin-react-hooks "^4.3.0"
     lodash "^4.17.21"
     showdown "^1.9.1"
@@ -3992,7 +3993,7 @@ date-fns@2.28.0:
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.28.0.tgz#9570d656f5fc13143e50c975a3b6bbeb46cd08b2"
   integrity sha512-8d35hViGYx/QH0icHYCeLmsLmMUheMmTyV9Fcm6gvNwdw31yXXH+O85sOBJ+OLnLQMKZowvpKb6FgMIQjcpvQw==
 
-date-fns@2.29.3:
+date-fns@2.29.3, date-fns@^2.29.3:
   version "2.29.3"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.29.3.tgz#27402d2fc67eb442b511b70bbdf98e6411cd68a8"
   integrity sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==
