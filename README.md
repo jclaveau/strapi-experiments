@@ -24,3 +24,16 @@
 - Pages Management via Strapi
 - Strapi configuration
 - @storybook/addon-a11y, @storybook/addon-viewport, @storybook/addon-toolbars
+
+## Install
++ Install nvm: https://www.digitalocean.com/community/tutorials/nodejs-node-version-manager
+```
+git clone git@github.com:jclaveau/strapi-experiments.git
+cd strapi-experiments
+nvm install
+cd quasar
+yarn
+cd ../strapi
+yarn
+yarn develop
+```

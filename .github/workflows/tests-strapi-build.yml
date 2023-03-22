@@ -6,7 +6,7 @@ on: [push]
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
-  
+
 jobs:
   test:
 
@@ -16,21 +16,21 @@ jobs:
       run:
         working-directory: ./strapi
 
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [ 16 ]
-
     steps:
     - uses: actions/checkout@v3
+
+    # https://github.com/renovatebot/renovate/issues/7716#issuecomment-734391360
+    - name: Read Node.js version from .nvmrc
+      run: echo "NODE_VERSION=$(cat ../.nvmrc)" >> $GITHUB_OUTPUT
+      id: nvm
 
     # https://github.com/actions/setup-node#caching-global-packages-data
     - uses: actions/setup-node@v3
       with:
         # https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#multiple-operating-systems-and-architectures
-        node-version: ${{ matrix.node-version }}
+        node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
         cache: 'yarn'
-        cache-dependency-path: strapi/yarn.lock
+        cache-dependency-path: quasar/yarn.lock
 
     - name: yarn install
       run: yarn install --immutable
