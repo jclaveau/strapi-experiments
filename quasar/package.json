@@ -39,6 +39,7 @@
     "@quasar/app-vite": "1.2.1",
     "@quasar/cli": "2.0.0",
     "@storybook/addon-actions": "6.5.16",
+    "@storybook/addon-coverage": "^0.0.8",
     "@storybook/addon-essentials": "6.5.16",
     "@storybook/addon-interactions": "6.5.16",
     "@storybook/addon-links": "6.5.16",
