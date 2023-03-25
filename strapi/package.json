@@ -10,8 +10,8 @@
     "strapi": "strapi"
   },
   "devDependencies": {
-    "@playwright/test": "1.32.0",
-    "playwright": "1.32.0"
+    "@playwright/test": "1.32.1",
+    "playwright": "1.32.1"
   },
   "dependencies": {
     "@_sh/strapi-plugin-ckeditor": "2.0.4",
