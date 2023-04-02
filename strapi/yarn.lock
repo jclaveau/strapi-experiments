@@ -10159,10 +10159,10 @@ std-env@^3.0.1:
   resolved "https://registry.yarnpkg.com/std-env/-/std-env-3.1.1.tgz#1f19c4d3f6278c52efd08a94574a2a8d32b7d092"
   integrity sha512-/c645XdExBypL01TpFKiG/3RAa/Qmu+zRi0MwAmrdEkwHNuN0ebo8ccAXBBDa5Z0QOJgBskUIbuCK91x0sCVEw==
 
-strapi-plugin-import-export-entries@1.18.0:
-  version "1.18.0"
-  resolved "https://registry.yarnpkg.com/strapi-plugin-import-export-entries/-/strapi-plugin-import-export-entries-1.18.0.tgz#7910244728f8c0e834b55c4b684d3e913ae31085"
-  integrity sha512-pAokLrqjd08JS7N/LUvsym3JTvja25J0xKw4zbPUDEt5Fdr/N9/N7wthKy6cv7TA7f6qJFq3q1RNtyjhJ5Cf/Q==
+strapi-plugin-import-export-entries@1.18.1:
+  version "1.18.1"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-import-export-entries/-/strapi-plugin-import-export-entries-1.18.1.tgz#f94b6a0282236cf0247342d14beb5c809874df06"
+  integrity sha512-snOkjVPq+wAFgUiM31+SsFIWNrNBiSknG1bPnee7mqYxu6gVb3lZ0UiHVbRy56x/y8q9OcRMg0nyorWCMw4fnA==
   dependencies:
     "@monaco-editor/react" "4.4.5"
     csvtojson "2.0.10"
@@ -10171,6 +10171,7 @@ strapi-plugin-import-export-entries@1.18.0:
     lodash "4.17.21"
     monaco-editor "0.33.0"
     monaco-editor-webpack-plugin "7.0.1"
+    node-fetch "2.6.9"
     react-singleton-hook "3.3.0"
 
 strapi-plugin-navigation@2.2.4:
