@@ -2815,22 +2815,10 @@
     prettier "2.8.4"
     typescript "4.6.2"
 
-"@strapi/utils@4.9.0":
+"@strapi/utils@4.9.0", "@strapi/utils@^4.9.0":
   version "4.9.0"
   resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.9.0.tgz#35731524d4c237f046b4fb4df1c32730dc85ad7d"
   integrity sha512-Tyr2Qk4pixl1uVVLdF0hehwaEKBiYqaB7/JMSzjsaN8/8XwLPEi5Y3cymYkzZy2Dcyl58FW+V+3fHmAUN39y9A==
-  dependencies:
-    "@sindresorhus/slugify" "1.1.0"
-    date-fns "2.29.3"
-    http-errors "1.8.1"
-    lodash "4.17.21"
-    p-map "4.0.0"
-    yup "0.32.9"
-
-"@strapi/utils@^4.6.0":
-  version "4.8.2"
-  resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.8.2.tgz#46d008f1695e5b9ad9954208e58273833652b138"
-  integrity sha512-cyB9Z9X+mpeSMeVLPNGm0YSrznNkIEwaZd5rXWRTH6XIajxOzB/tUdgFEnfwBOmFHxhm+MKxmf1CigRR609oRw==
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
     date-fns "2.29.3"
@@ -10174,13 +10162,13 @@ strapi-plugin-import-export-entries@1.18.1:
     node-fetch "2.6.9"
     react-singleton-hook "3.3.0"
 
-strapi-plugin-navigation@2.2.4:
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/strapi-plugin-navigation/-/strapi-plugin-navigation-2.2.4.tgz#1e7786352db8ea4091183adfc2649b466281caa2"
-  integrity sha512-u93NTAGITBvtpFW8d5xEhyDL1Qsp0zF3pfqznxj+UwpLFn5tTc3w0O0JpZsA+avgcU9/Q+sncQ9rWUmj+ZIHrQ==
+strapi-plugin-navigation@2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-navigation/-/strapi-plugin-navigation-2.2.5.tgz#98632fbaac34479d3d519e461a81591eca48ae37"
+  integrity sha512-XFnKzsdhgjivHbg4k79EPllOAC369bW50pPgS5+l0bcnRIYGdXY6U5Uz89M9HXgDsYw1GR34nJLzbuz7pyrmRw==
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
-    "@strapi/utils" "^4.6.0"
+    "@strapi/utils" "^4.9.0"
     lodash "^4.17.11"
     pluralize "^8.0.0"
     react "^16.9.0"
