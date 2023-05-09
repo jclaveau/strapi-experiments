@@ -2704,10 +2704,10 @@
     vite "^2.9.13"
     webpack-merge "^5.8.0"
 
-"@quasar/cli@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@quasar/cli/-/cli-2.1.0.tgz#7a217e1bffb1f29f8464c2ba1344e9d2ed433dea"
-  integrity sha512-LMBJoVHjWl6dcgLX9MDJ7J4iHp0tep0R6R8yIeg1zVbJOjDNkYRpJZWgq/Wado7VVqObHayt5mEN3pEqu+rM2g==
+"@quasar/cli@2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@quasar/cli/-/cli-2.1.1.tgz#5e57863114be8cf735c37a26c388f0a50f7feaef"
+  integrity sha512-ff2/z2G4FJMDBP3L+G1Ae8i9PxA94GSyCU6Ww3q0mvwaR8iHKaLwaldvxZTHU4HIhRIZaczIwBF6H/RkeLgodA==
   dependencies:
     ci-info "^3.8.0"
     compression "^1.7.4"
