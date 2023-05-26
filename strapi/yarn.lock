@@ -2973,10 +2973,10 @@
     redux "^4.2.1"
     yup "^0.32.9"
 
-"@strapi/plugin-seo@1.8.0":
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/@strapi/plugin-seo/-/plugin-seo-1.8.0.tgz#cd6d9e3d00d3c15577d8d533cc7ef9206ab47040"
-  integrity sha512-o3llsICF9gjTALQV7D9k/Q4XblYGlsI3Z+QRsM0tsaU890ROZqAjeloZ4sxfPaX7NlrGPuSslDMPxlnywz3jow==
+"@strapi/plugin-seo@1.9.0":
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/@strapi/plugin-seo/-/plugin-seo-1.9.0.tgz#fe508027d439b18196026c8034e6e2abdb2fe8e6"
+  integrity sha512-e5XHPPgXeGrAMCHvYWYnmvNZQycbO8eeU1oYnBKLQijhjp1foV8cLSbuNBhXphLeIlQ8s58yblFpguspL34nhw==
   dependencies:
     date-fns "^2.29.3"
     eslint-plugin-react-hooks "^4.3.0"
