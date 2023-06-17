@@ -25,7 +25,7 @@
     "strapi-plugin-import-export-entries": "1.21.0",
     "strapi-plugin-navigation": "2.2.11",
     "strapi-plugin-populate-deep": "2.0.0",
-    "strapi-plugin-sitemap": "2.0.10",
+    "strapi-plugin-sitemap": "2.0.11",
     "strapi-stripe": "3.3.0"
   },
   "author": {
