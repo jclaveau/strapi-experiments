@@ -2941,10 +2941,10 @@
     redux "^4.2.1"
     yup "^0.32.9"
 
-"@strapi/plugin-seo@1.9.1":
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/@strapi/plugin-seo/-/plugin-seo-1.9.1.tgz#0d6d7ad8ad2ae20a36c29ff028bcb7f8562262da"
-  integrity sha512-lOkyhrtuMIT9kn/g90aVa1iNE/BPIuNfvM5YZEIaLdUVuXogJp5xXT89YxMj9WFL2TaMQuM4zJgls2P1y79AOw==
+"@strapi/plugin-seo@1.9.2":
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/@strapi/plugin-seo/-/plugin-seo-1.9.2.tgz#025915c919b1f880e4bd9ab835d1a884af8ef0e0"
+  integrity sha512-skqckP1ut5nshgLyLJh/aXdwxCawfNzhdA0GfHK4OLffoYIVrtBhLaGyyschJH6NfVt/0AFl2uhU16ievdz9QQ==
   dependencies:
     date-fns "^2.29.3"
     eslint-plugin-react-hooks "^4.3.0"
