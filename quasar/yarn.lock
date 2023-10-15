@@ -4827,10 +4827,10 @@
   resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.5.0.tgz#98b99425edee70b4c992692628fa1ea2c1e57d07"
   integrity sha512-o9KfBeaBmCKl10usN4crU53fYtC1r7jJwdGKjPT24t348rHxgfpZ0xL3Xm/gLUYnc0oTp8LAmrxOeLyu6tbk2Q==
 
-"@vue/devtools@6.5.0":
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/@vue/devtools/-/devtools-6.5.0.tgz#32b09b0e3ca7b757802f9a0b9ded8c2035ce7874"
-  integrity sha512-PlXwf1k5LABNayF71QSfmRL0sRIcBR5HKjrsmGf+raILJ5h32/MRbzA0UpfS/fudCyRgi8F7W5KC1wLRfkTxPQ==
+"@vue/devtools@6.5.1":
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/@vue/devtools/-/devtools-6.5.1.tgz#45651de06c329eb61f4d0881321a1c4b3c551478"
+  integrity sha512-3xSNDzebOTUHoCPFNsyklY8tC8RZNg6gy63zXAppdz9FV4gUG/hlWkOZd9xcuotaZ1HcurmLLfHckfUfbTheXw==
   dependencies:
     cross-spawn "^7.0.3"
     electron "^21.0.1"
