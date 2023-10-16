@@ -3356,10 +3356,10 @@
     p-map "4.0.0"
     yup "0.32.9"
 
-"@strapi/utils@^4.13.6":
-  version "4.13.6"
-  resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.13.6.tgz#3526979e640d10dc853e277bf628abfdee9a5fcc"
-  integrity sha512-9IlkOe+mmZUh1WzQW+oWhEgRYuq2DHDWe1JzaNoCivVssFZh9PUr8GT6JYCk9LrNwGP2uX9o42K03NQi1NZ05A==
+"@strapi/utils@^4.14.2":
+  version "4.14.4"
+  resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.14.4.tgz#856bd5e459138327e2a0b07e46eab80f8d129d8f"
+  integrity sha512-Eyj9PB4Gz6r8cHsWzVOCnmEDTgYr17n3P8xOGHoLUN9Uz7dB7eeloeUNhYiAZHKzNDd02LETySWTglwwA5NpXQ==
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
     date-fns "2.30.0"
@@ -10390,13 +10390,13 @@ strapi-plugin-import-export-entries@1.21.1:
     node-fetch "2.6.9"
     react-singleton-hook "3.3.0"
 
-strapi-plugin-navigation@2.2.14:
-  version "2.2.14"
-  resolved "https://registry.yarnpkg.com/strapi-plugin-navigation/-/strapi-plugin-navigation-2.2.14.tgz#accb63c4ebead329232f1802cc065d094dcc388f"
-  integrity sha512-jI0TPpqBWHFz2ZyIwgNIXtSkaa8dMfkIRFfKhoSHIyJL0RD5Dqme7i0fCDv0v2/VHdh/DldkxPhmpGMsPy6wDQ==
+strapi-plugin-navigation@2.2.16:
+  version "2.2.16"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-navigation/-/strapi-plugin-navigation-2.2.16.tgz#584231ca995abe4133d57f87a9ac844c9a3deecc"
+  integrity sha512-hrWbabm7c0txc7vYdhpcowfm4S49/MGUuicyUvjZhwBcnDnZmpqmtyTT1bVco9QDEVc6Ks13Jc6kgWZdC0GbrQ==
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
-    "@strapi/utils" "^4.13.6"
+    "@strapi/utils" "^4.14.2"
     lodash "^4.17.21"
     pluralize "^8.0.0"
     react "^18.2.0"
