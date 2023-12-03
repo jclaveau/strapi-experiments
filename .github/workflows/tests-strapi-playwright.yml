@@ -15,7 +15,7 @@ jobs:
         working-directory: ./strapi
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     # https://github.com/renovatebot/renovate/issues/7716#issuecomment-734391360
     - name: Read Node.js version from .nvmrc
