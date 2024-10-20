@@ -10411,11 +10411,13 @@ strapi-plugin-populate-deep@2.0.0:
   resolved "https://registry.yarnpkg.com/strapi-plugin-populate-deep/-/strapi-plugin-populate-deep-2.0.0.tgz#dd558eaef2fe47583a63536964b46a945e93f555"
   integrity sha512-IsdXZPjRiOnaczoQaXI6xfxnFqUhR70uW1VCRbY4a3hEmmocpCpIUGx7TiHdNPJOZuDiueTgEIQ4V5XEru9Lvw==
 
-strapi-plugin-sitemap@2.0.11:
-  version "2.0.11"
-  resolved "https://registry.yarnpkg.com/strapi-plugin-sitemap/-/strapi-plugin-sitemap-2.0.11.tgz#bf22d85521390f56c5744e202ab55d6c84bbeb1a"
-  integrity sha512-gIw8m3zGQ5xYKrn5QLFQq+X/nczIm1fjXe4bAT/DKbRRzOBb79jI3th6uHqegSOueeoHnX1O6yvWTZLDmKNAdw==
+strapi-plugin-sitemap@3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-sitemap/-/strapi-plugin-sitemap-3.2.1.tgz#a3678802a1bac9e668f7bd7bba49b8b2593b9233"
+  integrity sha512-+7xy8/gUyynWb5UMP+l3NZ1W/ZghVkonJ8DvusCBINEb1/Xf4MWJgqDnSfJI1vK3Pb8RRn6L1YIB3Ql63Hx/Tg==
   dependencies:
+    chalk "^4.1.2"
+    commander "^8.3.0"
     immutable "^3.8.2"
     redux-immutable "^4.0.0"
     redux-thunk "^2.3.0"
